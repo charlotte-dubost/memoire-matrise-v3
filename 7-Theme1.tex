@@ -1,0 +1,555 @@
+\Chapter{ETUDE DU SAUT D'UNE ROUE CYR}\label{sec:Theme1}
+\begin{table}[htbp]
+  \centering
+  \caption{Constantes et variables de la modélisation du saut d'une roue Cyr}
+  \begin{tabular}{|c|l|}
+    \hline \rowcolor[gray]{0.8}\color{black}
+    Symbole         & Description\\
+    $A$           & Aire de la section\\
+   
+    $E$           & Module d'Young du matériau\\
+    $E_{p,g}$          & Energie potentielle gravitationnelle\\
+    $E_{tot}$          & Energie mécanique totale\\
+    $F$             & Force de compression appliquée à la roue\\
+    $g$     & Accélération gravitationnelle\\
+    $H_{max}$          & Hauteur de saut maximale\\
+    $I$           & Moment quadratique de la section\\
+    $k$             & raideur équivalente de la roue\\
+    $m_r$          & Masse de la roue\\
+    
+    $R$       & Rayon médian de la roue\\
+    $r_1$ & Rayon interne de section pour une section circulaire\\
+    $r_2$             & rayon externe de section pour une section circulaire\\
+    $\rho$           & Masse volumique du matériau\\ \hline
+  \end{tabular}
+  \label{tab:Definitions}
+\end{table}
+
+
+\section{Etude théorique}
+\subsection{Description du mouvement}
+La roue Cyr est comprimée par une force verticale $F$ exercée selon l'axe de son diamètre puis relâchée. Une partie de l'énergie de déformation élastique est transformée en saut. On notera $H_{max}$ la hauteur correspondant à l'énergie potentielle par laquelle s'élève le centre de gravité de la roue depuis sa position au repos à sa hauteur maximale.
+
+
+\subsubsection{Hypothèses}
+\begin{itemize}
+    \item On considère que le support contre lequel la roue est comprimée est parfaitement rigide.
+    \item On néglige la force de traînée de l'air.
+    \item La répartition des masses est idéalisée
+\end{itemize}
+
+\subsubsection{Modèle deux degrés de liberté}
+On modélise la roue Cyr par deux masses ponctuelles égales $m_r/2$ reliées par un ressort de rigidité $k$ et de longueur à vide $2R$, où $R$ correspond au rayon médian de la roue. \\
+La rigidité équivalente de la roue est donnée par \cite{yangkim}:
+\begin{equation}
+    k=\frac{4\pi EI}{(\pi^2 -8)R^3},
+    \label{eq:0}
+\end{equation}
+
+où $E$ est le module d'Young et $I$ est le moment moment quadratique de la section de la roue.
+
+\\
+ Les positions des masses sont reperées par les ordonnées $y_1(t)$ et $y_2(t)$.
+
+\begin{figure}[htb]
+\centering
+
+\input{images_2ddl/repos2.tex}
+\caption{Système au repos. Le ressort de longueur à vide $2R$ et de raideur $k$ est écrasé par le poids de la masse supérieure.}
+\label{fig:repos}
+\end{figure}
+
+\subsection{Limite en comportement linéaire}
+
+A partir d'une certaine flèche $\delta$ imposée par une force de compression $F$, l'anneau ne se comporte plus de manière linéaire et la relation $F=k\delta$, où $k$ est la constante définie dans l'équation \ref{eq:0}, n'est plus valable. 
+La valeur limite de $\delta$ au delà de laquelle on sort du domaine de comportement linéaire, est définie avec une étude éléments finis prenant en compte les non linéarités d'ordre géométrique, que l'on compare avec le modèle théorique linéaire (figure \ref{fig:lin1}). Dans cette étude, la roue est modélisée avec des éléments poutres, le déplacement $\delta$ est imposé comme paramètre d'entrée et la force $F$, relevée comme donnée de sortie, pour des raisons de convergence.
+
+On considère qu'on sort de la zone de comportement linéaire lorsque la valeur absolue de l'erreur relative entre les deux modèles, $\epsilon=\frac{F_{éléments finis}-F_{théorique}}{F_{théorique}}$ dépasse 10\%. La limite du domaine de comportement linéaire correspond donc à $\frac{delta}{R}<0.1$
+
+\begin{figure}[h]
+\centering
+\input{images_2ddl/lineaire.tex}
+\caption{Comparaison entre une étude éléments finis d'une roue en éléments poutres, dans laquelle on prend en compte les non linéarités géométriques, et le modèle théorique linéaire où la force appliquée et le déplacement sont liés par la constante $k$ selon la relation $F=k \delta$.}
+\label{fig:lin1}
+\end{figure}
+
+La dérivation de la courbe de $F=f(\delta)$ obtenue par analyse éléments finis donne l'évolution de la raideur $k$ en fonction de $\delta/R$ (figure \ref{fig:lin2}).\\
+Dans le domaine linéaire, on prendra comme valeur de $k$ la valeur moyenne des points situés dans la zone $\delta/R<0.1$
+
+\begin{figure}[h]
+\centering
+\input{images_2ddl/lineaire2.tex}
+\caption{Évolution du coefficient de raideur $k$ en fonction du ratio $\delta/R$. Cette courbe est obtenue par la dérivation des points de l'analyse éléments finis (figure \ref{fig:lin1}), en utilisant la méthode des différences finies centrées.}
+\label{fig:lin2}
+\end{figure}
+
+\subsection{Mise en équations}
+
+Les variables temporelles suivantes décrivent le mouvement du système comprimé puis relâché  (figure \ref{fig:saut}):
+
+\begin{itemize}
+    \item[$\bullet$] $t=-t_0$ : on relâche le ressort
+    \item[$\bullet$] $t=0$ : la masse inférieure quitte le sol
+    \item[$\bullet$] $t=t_f$ : le centre de gravité du système atteint sa hauteur maximale
+\end{itemize}
+
+
+
+\begin{figure}[h]
+
+\def\svgwidth{400}
+\input{images_2ddl/saut1.tex}
+
+\caption{Saut du système. Pour $t<-t_0$, le système est écrasé par une force F. Il est relâché à $t=-t_0$, et la masse inférieure quitte le sol à $t=0$. Le centre de gravité du système atteint sa hauteur maximale pour $t=t_f$}
+\label{fig:saut}
+\end{figure}
+
+Pour $-t_0<t<0$, la masse supérieure est soumise à deux forces verticales: son propre poids de norme $-m_r g/2$, et la force élastique de norme $-k(y_1-2R)$. Son mouvement est régi par:
+
+\begin{equation}
+    \frac{m_r}{2}\frac{d^2y_1}{dt^2}+k(y_1-2R)+\frac{m_r}{2}g=0,
+  \label{eq:1}
+\end{equation}
+
+avec les condition initiales:
+\begin{align}
+    &y_1(-t_0)=2R-\frac{F}{k}-\frac{m_r g}{2k} \nonumber\\
+    &\frac{dy_1}{dt}(-t_0)=0,
+\label{eq:1i}
+\end{align}
+
+où $g$ est l'accélération gravitationnelle. \\
+  
+Pour $0<t<t_f$, la force que le ressort exerce sur la masse inférieure devient suffisante pour prendre le dessus sur la gravité: $m_r g/2=k(y_1-2R)$,  et le mouvement des deux masses est régi par:
+
+\begin{align}
+    \frac{m_r}{2}\frac{d^2y_1}{dt^2}+k(y_1-y_2-2R)+\frac{m_r}{2}g&=0 \nonumber\\
+    \frac{m_r}{2}\frac{d^2y_2}{dt^2}+k(y_2-y_1+2R)+\frac{m_r}{2}g&=0,
+  \label{eq:3}
+\end{align}
+
+avec les conditions initiales: 
+\begin{align}
+    y_1(0)=&2R+\frac{m_r g}{2k} & \frac{d y_1}{dt}(0)=&v_{10}\nonumber\\
+    y_2(0)=&0 & \frac{d y2}{dt}(0)=&0
+  \label{eq:4}
+\end{align}    
+    
+
+\begin{figure}[htb]
+\centering
+\def\svgwidth{350}
+\input{images_2ddl/sautp.tex}
+
+\caption{Évolution temporelle des positions des masses et du centre de gravité lors du saut du système}
+\label{fig:saut}
+\end{figure}
+
+Avant de résoudre le problème, on le réécrit sous forme adimensionnelle:
+on définit le temps adimensionnel $\tau=t\sqrt{\dfrac{2k}{m_r}}$ et les variables positions adimensionnelles $\xi_1=y_1 \dfrac{2k}{m_r g}$ et $\xi_2=y_2 \dfrac{2k}{m_r g}$ \\
+
+ L'équation \ref{eq:1} devient:
+\begin{equation}
+    \frac{d^2\xi_1}{d\tau^2}+\xi_1-\xi_0+1=0,
+  \label{eq:1a}
+\end{equation}
+\\
+pour $-\tau_0<\tau<0$,\\
+avec $\xi_0=\dfrac{4Rk}{m_r g}$ et $\tau_0=t_0 \sqrt{\frac{2k}{m_r}}$ \\
+
+et avec les conditions initiales
+\begin{align}
+    &\xi_1(-\tau_0)=\xi_0-\frac{2F}{m_r g}-1 \nonumber\\
+    &\frac{d\xi_1}{d\tau}(-\tau_0)=0
+\label{eq:1ia}
+\end{align}
+ 
+
+De même, l'équation \ref{eq:3} devient:
+\begin{align}
+    \frac{d^2\xi_1}{d\tau^2}+\xi_1-\xi_2-\xi_0+1&=0 \nonumber\\
+    \frac{d^2\xi_2}{d\tau^2}+\xi_2-\xi_1+\xi_0+1&=0
+  \label{eq:3a}
+\end{align}
+
+pour $0<\tau<\tau_f$,\\
+avec $\tau_f=t_f \sqrt{\frac{2k}{m_r}}$ \\
+et avec les conditions initiales: 
+\begin{align}
+    \xi_1(0)&=\xi_0+1   &  \frac{d xi_1}{d\tau}(0)&=\zeta_{10} \nonumber\\
+    \xi_2(0)&=0   &  \frac{d \xi_2}{d\tau}(0)&=0
+  \label{eq:4a}
+\end{align} 
+
+En résolvant \ref{eq:1a} avec les conditions initiales \ref{eq:1ia}, on obtient l'équation du mouvement \ref{eq:2} pour $-\tau_0<\tau<0$:
+\begin{align}
+    \xi_1&=-frac{-2F}{m_r g}(\cos{-\tau_0}\cos{\tau}+\sin{-\tau_0}\sin{\tau})+\xi_0-1 \nonumber\\
+    \xi_2&=0
+  \label{eq:2}
+\end{align}
+
+En résolvant \ref{eq:3a} avec les conditions initiales \ref{eq:4a}, on obtient l'équation du mouvement \ref{eq:5a} pour $0<\tau<\tau_f$:
+\begin{align}
+    \xi_1&=-\frac{1}{2}\tau^2+\frac{\zeta_{10}}{2}\tau+\frac{\zeta_{10}}{2\sqrt{2}}\sin{(\sqrt{2}\tau)}+\frac{1}{2}\cos{(\sqrt{2}\tau)}+\xi_0+\frac{1}{2} \nonumber\\
+    \xi_2&=-\frac{1}{2}\tau^2+\frac{\zeta_{10}}{2}\tau-\frac{\zeta_{10}}{2\sqrt{2}}\sin{(\sqrt{2}\tau)}-\frac{1}{2}\cos{(\sqrt{2}\tau)}-\frac{1}{2}
+  \label{eq:5a}
+\end{align}
+
+La vitesse initiale adimensionnelle de la masse supérieure s'exprime
+\begin{equation}
+    \zeta_{10}=\frac{d\xi_1}{d\tau}(0)=-\frac{2F}{m_r g}\sin{-\tau_0}
+    \label{eq:c1}
+\end{equation}
+
+
+D'après les conditions initiales \ref{eq:4a} appliquées à l'équation \ref{eq:2}, on a par continuité:
+\begin{equation}
+    \cos{-\tau_0}=-\frac{m_r g}{F}
+    \label{eq:c2}
+\end{equation}
+
+On substitue \ref{eq:c2} à l'intérieur de \ref{eq:c1}:
+\begin{equation}
+    \zeta_{10}=\sqrt{(\frac{2F}{m_r g})^2-4}
+    \label{eq:c3}
+\end{equation}
+
+La positon adimensionnelle du centre de gravité du système s'écrit $\xi_{cdg}(\tau)=\dfrac{\xi_1(\tau)+\xi_2(\tau)}{2}$. En substituant \ref{eq:5a} dans cette expression, on obtient: 
+
+\begin{equation}
+  \xi_{cdg}(\tau)=-\frac{1}{2}\tau^2+\frac{\zeta_{10}}{2}\tau+\frac{\xi_0+1}{2}
+  \label{eq:cdg}
+\end{equation}
+
+En substituant \ref{eq:c3} dans \ref{eq:cdg} on obtient:
+
+\begin{equation}
+  \xi_{cdg}(\tau)=-\frac{1}{2}\tau^2+\sqrt{(\frac{F}{m_r g})^2-1}\tau+\frac{\xi_0+1}{2}
+  \label{eq:cdg2}
+\end{equation}
+
+Durant l'élévation du centre de gravité de la roue, on observe des déformations correspondant au second mode vibratoire d'un anneau (déformations planes).
+
+Lorsqu'on arrive à $\tau=\tau_f$, la vitesse du centre de gravité s'annule. En dérivant \ref{eq:cdg2}, on trouve l'expression de $\tau_f$:
+
+\begin{equation}
+    \tau_f=\sqrt{(\frac{F}{m_r g})^2-1}
+    \label{eq:tauf}
+\end{equation}
+
+On substitue ensuite \ref{eq:tauf} à l'intérieur de \ref{eq:cdg2} pour obtenir l'expression de la hauteur maximale du centre de gravité:
+
+\begin{equation}
+  \xi_{cdg,max}=\frac{1}{2}((\frac{F}{m_r g})^2-1)+\frac{\xi_0+1}{2}
+  \label{eq:cdgmax}
+\end{equation}
+
+On soustrait ensuite à \ref{eq:cdgmax} sa position adimensionnelle à l'équilibre statique $\xi_{cdg,ref}=\dfrac{\xi_0-1}{2}$ pour obtenir l'expression adimensionnelle $\eta_{max}=\dfrac{2k}{m_rg}H_{max}$:
+
+
+\begin{equation}
+\eta_{max}=\frac{1}{2}((\frac{F}{m_r g})^2+1)
+ \label{eq:hmax}
+\end{equation}
+
+
+Ainsi, les paramètres influençant la hauteur maximale de saut du système sont:
+\begin{itemize}
+    \item La force de compression $F$ à laquelle ce dernier est soumis initialement
+    \item La masse du système, déterminée par sa géométrie et la masse volumique du matériau
+    \item La raideur équivalente du système qui dépend de sa géométrie et du module de Young du matériau.
+\end{itemize}
+
+L'expression de $H_{max}$ permet d'étudier l'efficacité énergétique du système, c'est à dire la fraction de l'énergie totale $E_{tot}$ fournie au système sous forme de déformation élastique qui est convertie en énergie potentielle gravitationnelle $E_{p,g}$ servant au saut. \\
+Avec $E_{tot}=\dfrac{F^2}{2k}$ et $E_{p,g}=m_r g H_{max}$,\\
+L'efficacité énergétique s'exprime:  $\dfrac{E_{p,g}}{E_{tot}}=\dfrac{1}{2}((\dfrac{m_r g}{F})^2+1)$.
+
+\subsection{Valeurs limites et premiers résultats}
+Dans la partie qui suit, on étudie les variations de $\eta_{max}$, la hauteur maximale de saut adimensionnelle et du ratio d'efficacité énergétique.
+\\ 
+\\ 
+Les paramètres $F$, $k$ et $m_r$ doivent rester supérieurs aux valeurs limites suivantes, en dessous desquelles le modèle n'est plus valide:
+\begin{itemize}
+    \item Pour $F$: l'énergie de déformation élastique doit être suffisante pour faire décoller le système, ce qui se traduit par: $F/m_r g>1$
+    \item Pour $k$: le ressort doit pouvoir soutenir la masse 1: $m_r g/2k<2R$ c'est à dire: $k>m_r g/4R$ 
+    \item Pour $m_r$: diminuer $m_r$ revient à retirer de la matière, il y a donc une masse limite dépendant des propriétés mécaniques du matériau en dessous de laquelle il y aura endommagement lors de l'utilisation, la roue étant devenue trop fragile.
+\end{itemize}
+Ces limites seront indiquées par des pointillés sur les tracés des figures \ref{fig:eta} et \ref{fig:effe}.
+\\
+
+\begin{figure}[htb]
+\centering
+\def\svgwidth{320}
+\input{images_2ddl/eta.tex}
+\caption{Variation de la hauteur maximale de saut adimensionnelle $\eta_{max}$ en fonction du ratio $F/m_r g$}
+\label{fig:eta}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\def\svgwidth{320}
+\input{images_2ddl/eff.tex}
+\caption{Variation de l'efficacité énergétique en fonction du ratio $\dfrac{F}{m_r g}$}
+\label{fig:effe}
+\end{figure}
+
+Remarques:
+
+\begin{itemize}
+    \item Les tracés adimensionnels permettent d'étudier une tendance globale, en s'affranchissant de la dépendance des résultats avec les autres paramètres.
+    \item On identifie deux modes pour le mouvement du système: le mode de translation caractérisé par l'évolution de la position du centre de gravité donnée à l'équation \ref{eq:cdg2}
+    $$\xi_{translation}(\tau)=-\frac{1}{2}\tau^2+\sqrt{(\frac{F}{m_r g})^2-1}\tau+\frac{2Rk}{m_r g}+\frac{1}{2},$$ et le mode de vibration, obtenu par la soustraction des positions des deux masses données dans l'équation \ref{eq:5a}: 
+    $$\xi_{vibration}=\frac{\xi_1 - \xi_2}{2},$$ soit $$\xi_{vibration}=\frac{1}{2\sqrt{2}}\sin{(\sqrt{2}\tau)}\sqrt{(\frac{2F}{m_r g})^2-4}+\frac{1}{2}\cos{(\sqrt{2}\tau)}+\frac{2Rk}{m_r g}+\frac{1}{2}.$$
+    Ces expressions illustrent ce qu'on constate en observant les figures \ref{fig:eta} et \ref{fig:effe}: plus le ratio $\dfrac{F}{m_r g}$ est important, plus les amplitudes des modes de translation et de vibration augmentent, et donc la hauteur maximale de saut $H_{max}$ et l'amplitude des vibrations augmentent toutes les deux. Ainsi l'efficacité énergétique décroît car l'énergie dissipée par vibration augmente en même temps que $H_{max}$ avec le ratio $\dfrac{F}{m_r g}$.
+\end{itemize}
+
+\subsection{Mise en évidence de différents régimes de saut}
+Les résultats et conclusions des sous-sections précédentes sont synthétisés en figure \ref{fig:regime}. On différencie d'une part le régime linéaire du régime non linéaire selon la valeur du ratio $\delta/R$, où $\delta$ est la flèche imposée par la force $F$. On rappelle que la valeur limite en comportement linéaire a été fixée à $\delta/R=0.1$. Il existe également trois régimes de saut distincts, en fonction du ratio $\dfrac{F}{m_r g}$. Le premier, trivial, correspond au cas où la force appliquée ne suffit pas à soulever la roue: il n'y a pas de saut. Le passage d'un saut efficace énergétiquement à un saut peu efficace est déterminée par la dissipation d'énergie par vibration: plus la force augmente par rapport au poids de la roue, plus l'amplitude du mode de vibration augmente, et plus l'efficacité énergétique du saut décroît.
+
+
+\begin{figure}[htb]
+\def\svgwidth{400}
+\input{images_2ddl/regimes1.tex}
+\caption{Carte des différents régimes de saut possibles pour une roue Cyr en fonction des ratios $F/kR$ et $F/m_r g$.}
+\label{fig:regime}
+\end{figure}
+
+\subsection{Étude de $H_{max}$ en fonction de la géométrie de la section}
+Nous avons vu que la rigidité $k$ et la masse $m_r$ de la roue sont des paramètres déterminants pour $H_{max}$. 
+D'après \ref{eq:km1}, on peut moduler $k$ et $m_r$ en jouant sur les propriétés du matériau avec la masse volumique $\rho$ et le module de Young $E$, ou bien en jouant sur la géométrie avec le rayon médian de la roue $R$ et les rayons intérieur et extérieur de la section $r_1$, $r_2$ qui déterminent l'aire de section $A$ et le moment quadratique de section $I$.
+\begin{align}
+    k&=\frac{4\pi EI}{(\pi^2 -8)R^3} &  I&=\frac{\pi}{4}(r_2^4-r_1^4) \nonumber\\
+    m_r&=2\pi R \rho A   & A&=\pi (r_2^2-r_1^2)
+    \label{eq:km1}
+\end{align}
+
+Les dimensions de la section, caractérisées par $r_1$ et $r_2$, sont les paramètres les plus malléables. Nous allons étudier leur influence sur la hauteur maximale de saut puis en déduire des valeurs optimisées. \\
+Le matériau considéré dans cette étude sera le matériau ayant le module de Young le plus élevé parmi ceux disponibles pour l'imprimante 3D utilisée.\\
+Il s'agit du nylon renforcé avec des fibres de carbone courtes, ayant pour masse volumique $\rho=1170 kg \cdot m^{-3}$, pour module d'Young $E=9.0 GPa$, pour module de cisaillement $G=3.8 GPa$ et une contrainte à la rupture $\sigma_r=63.0 MPa$.\\
+Le rayon médian $R$ de la roue sera compris entre $0.8 m$ et $1.0 m$, nous fixons sa valeur à $0.9 m$. \\
+On considère deux types de chargement pour la force de compression $F$ appliquée au sommet de la roue: 
+\begin{itemize}
+    \item $F_1=900 N$, qui correspond au cas où l'utilisateur se suspend par une main à la roue, la charge maximum qu'il peut appliquer en statique. 
+    \item $F_2=c_d F_1 $, où $c_d=5$ rend compte des effets dynamiques. Le choix de la valeur de $c_d$ est basé sur des articles traitant des efforts dynamiques à l'impact exercés par des gymnastes lors de mouvements acrobatiques \cite{marinsek},\cite{seegmiller_ground_nodate}, \cite{mcnair_normative_1999},\cite{prapavessis_effects_1999} et sur les travaux de Marion Cossin, mesurant les efforts exercés par des circassiens suspendus à des agrès aériens \cite{cossin_mesure_nodate}.
+\end{itemize}
+ 
+
+$H_{max}$ décroît avec $k$ et $m_r$ selon les lois modélisées dans les sections précédentes. Maximiser $H_{max}$ en jouant sur les paramètres $r_1$ et $r_2$ revient à minimiser les valeurs de $I$ et de $A$, et donc réduire l'épaisseur de section. \\
+La première étape qui s'impose est de définir des limites inférieures de l'épaisseur de section pour s'assurer que la roue ne sera ni sujette à du flambement, de l'écoulement et qu'on restera dans le domaine de comportement linéaire.
+Dans ce qui suit pour chaque valeur fixe du rayon externe $r_2$, comprise entre $10 mm$ et $50 mm$, nous étudierons le comportement de la roue pour un rayon interne $r_1$ variant de $0 mm$ à $r_2 - 0.01 mm$.
+
+\subsubsection{Limites en flambement et en écoulement lors de la compression}
+
+Lorsqu'on exerce une force de compression au sommet de la roue, des phénomènes de flambement et d'écoulement apparaissent si sa section n'est pas assez épaisse. 
+Pour chaque valeur du rayon externe $r_2$, compris entre $10 mm$ et $50 mm$, on cherche à savoir quelle est la valeur maximale du rayon interne $r_1$ permettant d'éviter ces phénomènes. 
+
+ \begin{figure}[h]
+\centering
+\includegraphics[width=200]{saut2/elf1.PNG}
+\includegraphics[width=241]{saut2/elf2.PNG}
+\caption{Modélisation éléments finis d'une roue Cyr comprimée par une force exercée à son sommet.}
+\label{fig:elf1}
+\end{figure}
+
+Pour chaque valeur du rayon externe $r_2$, compris entre $10 mm$ et $50 mm$, une étude linéaire par éléments finis nous donne le rayon interne $r_1$ à partir duquel il y a flambement dans la roue. 
+De même manière, une étude linéaire des contraintes dans la roue par éléments finis nous donne pour chaque $r_2$, le $r_1$ à partir duquel il y a écoulement. 
+
+On combine ces deux études: pour chaque $r_2$, on ajuste $r_1$ jusqu'à ce qu'il y ait flambement et écoulement en même temps, c'est à dire jusqu'au moment où la différence de chargement qui provoque chacun de ces deux phénomènes atteint sa valeur minimale (figure \ref{fig:fle12}). 
+ \begin{figure}[h]
+\centering
+\includegraphics[width=400]{saut2/elf3.PNG}
+\caption{Contraintes dans la roue lors de la compression par une force exercée à son sommet, obtenues par une analyse éléments finis linéaire. Les contraintes maximales se situent au niveau du rayon interne de la roue là où la force est exercée et dans la zone diamétralement opposée à cet endroit.}
+\label{fig:elf2}
+\end{figure}
+
+Les paramètres des études éléments finis correspondent à une roue de rayon médian $R=0.9 m$, en nylon renforcé avec des fibres de carbone courtes à laquelle on applique la force de compression $F=F_2$.
+
+\begin{figure}[h]
+\def\svgwidth{240}
+\input{images_2ddl/fle1.tex}
+\def\svgwidth{240}
+\input{images_2ddl/fle2.tex}
+\caption{Couples $(r_1,r_2)$ pour lesquels on à a la fois flambement et écoulement dans la roue en nylon renforcé aux fibres de carbone courtes, pour une force $F_2=4500 N$ appliquée à son sommet.}
+\label{fig:fle12}
+\end{figure}
+
+\subsubsection{Limites en écoulement à l'impact}
+
+Lorsque l'utilisateur saute avec la roue, la partie entre ses pieds et le sol est soumise à des contraintes dues à l'impact de l'atterrissage qui créent de l'écoulement et un écrasement de la section si son épaisseur n'est pas suffisante. 
+
+Le saut peut s'effectuer pieds joints ou écartés. La configuration pieds joints étant celle qui génère le plus de contraintes, c'est la seule que nous étudierons.
+
+De même que précédemment, pour chaque valeur du rayon externe $r_2$, compris entre $10 mm$ et $50 mm$, une étude linéaire par éléments finis nous donne le rayon interne $r_1$ à partir duquel il y a écoulement dans la section. \\
+Pour cette étude, on modélise uniquement la partie inférieure de la roue, qu'on approxime par un cylindre auquel est appliqué la pression correspondant à la force $F_2$ répartie sur la surface de contact entre les pieds de l'utilisateur et la roue (figure \ref{fig:ecrasement}).
+
+ \begin{figure}[h]
+\centering
+\includegraphics[width=290]{saut2/elf4.PNG}
+\includegraphics[width=170]{saut2/elf5.PNG}
+\caption{Modélisation éléments finis de l'écrasement de la section de la roue entre les pieds de l'utilisateur et le sol lors de l'impact dû à l'atterrissage.}
+\label{fig:ecrasement}
+\end{figure}
+
+\subsubsection{Limites en comportement linéaire}
+Pour rester dans le domaine de comportement linéaire géométrique défini au début du chapitre la flèche $\delta$ imposée par l'utilisateur ne doit pas dépasser 10\% du rayon médian $R$. 
+Cette condition s'applique au cas d'utilisation courant de la roue, le chargement correspondant est la force $F_1$.
+On évalue la flèche avec son expression théorique: $\delta=F_1/k$, où $k$ est la constante élastique définie plus haut, pour une roue en nylon renforcé aux fibres de carbone courtes de rayon médian $R=0.9 m$. 
+Pour chaque $r_2$ donné, on obtient ainsi la valeur maximale de $r_1$ pour rester dans le domaine linéaire (figure \ref{fig:fle4}). On remarque que pour $r_2=10 mm$ il n'est pas possible d'avoir un comportement linéaire, la courbe se trouvant entièrement au delà de la frontière. On éliminera donc le cas $r_2=10 mm$ pour la suite.
+
+\begin{figure}
+\centering
+\def\svgwidth{350}
+\input{images_2ddl/fle4.tex}
+\caption{Ratio $\delta/R$ en fonction de $r_1$ pour un $r_2$ donné. La droite horizontale en pointillés correspond à la valeur $0.1$ au delà de laquelle on quitte le domaine de comportement linéaire. L'intersection de cette droite avec chacune des courbes donne la valeur de $r_1$ à ne pas dépasser pour rester dans le domaine linéaire géométrique. Les calculs sont réalisés pour une roue en nylon renforcé aux fibres de carbone courtes de rayon médian $R=0.9 m$, avec une force $F_1=900N$ appliquée à son sommet.}
+\label{fig:fle4}
+\end{figure}
+
+\subsubsection{Optimisation de la section pour le saut de la roue Cyr}
+Les limites obtenues dans les trois sections précédentes sont combinées à l'étude de la hauteur maximale de saut en fonction de $r_1$, pour chaque $r_2$ compris entre $15 mm$ et $50 mm$ (figure \ref{fig:fle3}). On estime la hauteur de saut avec notre modèle à deux degrés de liberté en considérant que la roue est comprimée d'une force de $900N$ puis relâchée. Par exemple, pour $r_2=15 mm$ on obtient des sauts de plusieurs mètres lorsque $r_1$ avoisine les $14mm$, cependant on sortira de la zone de comportement linéaire, la roue sera sujette au flambement et à l'écoulement lors de sa compression et il y aura écrasement de section à l'impact lors des sauts. Pour chaque courbe, les points d'intersection avec chacune des trois limites de $r_1$ correspondent aux hauteurs de saut optimisées pour chaque type de limite.
+
+
+\begin{figure}[h]
+\centering
+\def\svgwidth{500}
+\input{images_2ddl/fle3.tex}
+\caption{Hauteur maximale de saut en fonction de $r_1$, pour des $r_2$ donnés. Les points d'intersection des courbes $H_{max}=f(r_1)$ avec les limites en pointillés correspondent aux valeurs pour lesquelles le saut de la roue est optimisé. Les calculs sont réalisés pour une roue en nylon renforcé aux fibres de carbone courtes de rayon médian $R=0.9 m$, avec la force $F_1$ appliquée à son sommet.}
+\label{fig:fle3}
+\end{figure}
+
+Ces points d'intersections reliés donnent trois nouvelles courbes correspondant chacune à un type de limite: flambement-écoulement en compression, écoulement à l'impact, sortie du domaine géométrique linéaire (figure \ref{fig:fle51}). Pour chaque $r_2$, le point le plus à gauche donne la valeur optimale de $r_1$, permettant d'avoir une épaisseur de section aussi fine que possible et de maximiser $H_{max}$ sans dommages, en gardant un comportement linéaire.
+
+\begin{figure}[h]
+\centering
+\def\svgwidth{450}
+\input{images_2ddl/fle41.tex}
+\caption{Hauteur maximale de saut aux points d'optimisation $(r_1,r_2)$. Les calculs sont réalisés pour une roue en nylon renforcé aux fibres de carbone courtes de rayon médian $R=0.9 m$, avec la force $F_1$ appliquée à son sommet.}
+\label{fig:fle51}
+\end{figure}
+
+D'après la figure \ref{fig:fle51}, la section optimale correspond à un $r_2$ compris entre $15mm$ et $20mm$. On raffine donc cette zone de l'étude (figure \ref{fig:fle52}).
+
+\begin{figure}[h]
+\centering
+\def\svgwidth{400}
+\input{images_2ddl/fle6.tex}
+\caption{Étude raffinée}
+\label{fig:fle52}
+\end{figure}
+Pour chaque $r_2$ compris entre $15mm$ et $50mm$, on garde la plus basse des trois limites de $r_1$ (figure \ref{fig:fle5}). La courbe obtenue donne la valeur de $H_{max}$ aux points d'optimisation $(r_1,r_2)$ qui permettent de la maximiser tout en respectant chaque limite. 
+Les dimensions de section optimales sont ainsi $r_2=18 mm$ et $r_1=15.2 mm$, et la hauteur maximale de saut correspondante est $H_{max}=1.01 m$.
+\begin{figure}[h]
+\centering
+\def\svgwidth{300}
+\input{images_2ddl/fle7.tex}
+\caption{Hauteur maximale de saut aux points d'optimisation $(r_1,r_2)$. Les calculs sont réalisés pour une roue en nylon renforcé aux fibres de carbone courtes de rayon médian $R=0.9 m$, avec la force $F_1$ appliquée à son sommet.}
+\label{fig:fle5}
+\end{figure}
+
+
+\subsection{Comparaison avec les points de l'article \textit{Jumping hoops}}
+Dans leur article \textit{Jumping hoops} \cite{yangkim}, présenté au chapitre \ref{sec:RevLitt}, Yang et Kim étudient le saut d'anneaux comprimés puis relâchés.
+Leur modèle théorique est basé sur des bilans énergétiques réalisés au moment où l'anneau quitte le sol et au moment où son centre de gravité atteint sa hauteur maximale, puis complété par leurs résultats expérimentaux (figure \ref{fig:ykres}).
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=4.5in]{images_2ddl/ykres.png}
+\caption{Résultats expérimentaux de Yang et Kim, sous forme de graphique adimensionnel. $H_{max}$ représente la hauteur maximale du saut, $h_c=\frac{E}{\rho g}$, où $E$ est le module d'Young, $\rho$ la masse volumique et $g$ l'accélération gravitationnelle. $\tau$ représente la longueur d'une des côtés de la section (l'autre, $w$ est fixé à 3 mm), $R$ est le rayon médian de la roue et $\delta$ est la flèche initiale imposée.}
+\label{fig:ykres}
+\end{figure}
+
+
+On superpose les résultats expérimentaux de Yang et Kim et les courbes issues de nos modèles théoriques (figures \ref{fig:ykmae} et \ref{fig:yke}).
+Pour $H_{max}$, les résultats expérimentaux de Yang et Kim concordent avec notre modèle théorique à deux degrés de liberté.
+Pour le ratio d'efficacité énergétique $\dfrac{E_{p.g}}{E_{tot}}$, on observe des différences entre notre modèle théorique et les résultats expérimentaux de Yang et Kim.
+Ces différences s'expliquent par la dissipation d'énergie due à la force de traînée que nous avons choisi de négliger dans notre modèle, et par un comportement non linéaire du coefficient de raideur $k$. Pour vérifier cette dernière supposition, nous calculons la valeur du ratio $\dfrac{\delta}{R}$ et la comparer à la valeur limite $0.1$ que nous avions définie au début du chapitre, au delà de laquelle on sort de la zone de comportement linéaire.
+
+\begin{figure}[htb]
+\centering
+\def\svgwidth{320}
+\input{images_2ddl/ykmae1.tex}
+\caption{Graphique adimensionnel des variations de $H_{max}$ en fonction des paramètres déterminants du modèle}
+\label{fig:ykmae}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\def\svgwidth{320}
+\input{images_2ddl/yke3.tex}
+\caption{Variation de l'efficacité énergétique en fonction du ratio $F/(m_r g)$. La ligne pointillée rouge représente la valeur minimale que doit avoir $F$ pour qu'il y ait un saut.}
+\label{fig:yke}
+\end{figure}
+
+Pour tous les points expérimentaux de Yang et Kim $\dfrac{\delta}{R}>0.1$. Pour pouvoir observer une tendance, nous élargissons le seuil de tolérance: nous traçons uniquement les points pour lesquels $\dfrac{\delta}{R}<0.35$. Ces derniers sont proches de la courbe (figure \ref{fig:ytol}). Plus $\dfrac{\delta}{R}$ s'éloigne du seuil $0.1$, plus les points expérimentaux s'éloignent de la courbe représentant notre modèle théorique.
+L'hypothèse de la non-linéarité du coefficient de raideur est donc validée. Les résultats expérimentaux de Yang et Kim concordent avec notre modèle théorique à deux degrés de liberté.
+
+\begin{figure}[htb]
+\centering
+\def\svgwidth{320}
+\input{images_2ddl/yktol3.tex}
+\caption{Variation de l'efficacité énergétique en fonction du ratio $F/(m_r g)$ pour $\frac{\delta}{R}<0.35$. Les résultats sont en accord avec la courbe théorique.}
+\label{fig:ytol}
+\end{figure}
+
+
+\subsection{Travail expérimental}
+
+\subsubsection{Méthodologie}
+En plus des résultats de Yang et Kim, nous confrontons notre modèle théorique à des expériences réalisées à l'aide d'anneaux en acide polylactique (PLA) obtenus avec une imprimante Raise3D. \\
+Le PLA utilisé a pour module de Young $E_{PLA}=3.1 GPa$ et pour masse volumique $\rho_{PLA}=1250 kg/m^{-3}$. \\
+On imprime 4 anneaux différents de sections rectangulaires aux dimensions respectives $L_1=5mm$, $l_1=2mm$, $L_2=5mm$, $l_2=1mm$, $L_3=4mm$, $l_3=2mm$, $L_4=8mm$, $l_1=1mm$ et de rayons médians respectifs $R_1=50mm$, $R_2=60mm$, $R_3=50mm$, $R_4=60mm$. \\
+Chaque anneau est suspendu à un axe et un poids est accroché par un fil à son sommet inférieur. Ce dernier est ensuite coupé: l'anneau effectue un saut. Les positions sont enregistrées par vidéo et analysées à l'aide du logiciel Tracker (figure \ref{fig:expsaut}). \\
+Cette expérience correspond au mouvement de notre modèle 2DDL du ressort que l'on comprime puis relâche, excepté qu'ici la déformation élastique est un allongement et non une compression, ce qui n'empêche pas le saut par rapport à la position d'équilibre d'obéir aux mêmes lois. Cette configuration a été choisie pour des raisons pratiques: il est plus facile d'immobiliser l'anneau en le suspendant. \\
+Chaque anneau fait l'objet de deux séries de 5 mesures, et pour chaque série, un poids différent est attaché à l'anneau. Les masses des poids $M_{anneau,série}$ sont $M_{1,1}=34g$, $M_{1,2}=64g$, $M_{2,1}=12g$, $M_{2,2}=17g$, $M_{3,1}=34g$, $M_{3,2}=64g$, $M_{4,1}=17g$, $M_{4,2}=20g$. \\
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=2.3in]{images_2ddl/jumpexp.jpg}
+\caption{Expérience avec un anneau en PLA. Le sommet supérieur de l'anneau repose sur un axe fixe, un poids est attaché au sommet inférieur par un fil. Celui-ci est ensuite coupé et les positions de l'anneau sont enregistrées et analysées.}
+\label{fig:expsaut}
+\end{figure}
+
+\subsubsection{Résultats}
+A l'issue de ces mesures, on dispose des valeurs de $H_max$ correspondant à une certaine force appliquée et à la raideur k propre à chaque anneau (figures \ref{fig:expresbf} et \ref{fig:expresbk}). Pour que ces résultats aient un sens et soient comparables, il faut raisonner avec des variables adimensionnelles (figures \ref{fig:expmae} et \ref{fig:expeff}). \\
+
+Notre modèle théorique concordent avec nos résultats expérimentaux et ceux de Yang et Kim. Notre modélisation 2DDL est ainsi validée, ainsi que les valeurs de dimensionnement que nous en avons déduit.
+
+\begin{figure}[htb]
+\centering
+\def\svgwidth{330}
+\input{images_2ddl/expb}
+\caption{Résultats bruts des expériences: $H_{max}$ en fonction de la force appliquée $F=M_{anneau,série}g$. Les symboles vides correspondent aux expériences de Yang et Kim \cite{yangkim}.}
+\label{fig:expresbf}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\def\svgwidth{330}
+\input{images_2ddl/expb2}
+\caption{Résultats bruts de l'expérience: $H_{max}$ en fonction de la raideur k propre à chaque anneau. Les symboles vides correspondent aux expériences de Yang et Kim \cite{yangkim}.}
+\label{fig:expresbk}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\def\svgwidth{310}
+\input{images_2ddl/exp}
+\caption{Résultats de l'expérience $H_{max}$ mise à l'échelle avec des variables adimensionnelles. Les symboles vides correspondent aux expériences de Yang et Kim \cite{yangkim}.}
+\label{fig:expmae}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\def\svgwidth{310}
+\input{images_2ddl/exp2}
+\caption{Résultats de l'expérience: efficacité énergétique en fonction du ratio adimensionnel $F/m_rg$. Les symboles vides correspondent aux expériences de Yang et Kim \cite{yangkim}.}
+\label{fig:expeff}
+\end{figure}
+
+\subsubsection{Imprécisions}
+
+Les résultats de l'expérience sont affectés par les facteurs suivants:
+
+\begin{itemize}
+    \item Les défauts de fabrication des anneaux: ces derniers ne sont pas symétriques ce qui cause un déséquilibre lors des sauts.
+    \item La déformation plastique: entre le moment où on attache le poids et suspend l'anneau et l'instant où on coupe le fil, l'anneau à le temps d'être soumis à une déformation plastique qui diminue la hauteur du saut. Ce phénomène est plus présent pour les anneaux ayant les raideurs les plus basses, c'est à dire ceux ayant les plus grands diamètres (voir figure \ref{fig:expresbk}).
+\end{itemize}

@@ -1,0 +1,24 @@
+% Liste des sigles et abbréviations / List of acronyms and abbreviations
+\ifthenelse{\equal{\Langue}{english}}{
+	\newcommand\abbrevname{LIST OF SYMBOLS AND ACRONYMS}
+}{
+	\newcommand\abbrevname{LISTE DES SIGLES ET ABRÉVIATIONS}
+}
+\chapter*{\abbrevname}
+\addcontentsline{toc}{compteur}{\abbrevname}
+\pagestyle{pagenumber}
+%
+\begin{acronym}
+  \acro{ENC}{Ecole Nationale de Cirque}
+  \acro{CNAC}{Centre National des Arts du Cirque}
+  \acro{FEDEC}{Fédération Européenne Des Ecoles de Cirque professionnelles}
+\end{acronym}
+%
+\begin{longtable}{lp{5in}}
+ENC       & Ecole Nationale de Cirque\\
+CNAC       & Centre National des Arts du Cirque\\
+FEDEC       & Fédération Européenne Des Ecoles de Cirque professionnelles\\
+2DDL       & Deux degrés de liberté\\
+PLA       & Acide polylactique\\
+\end{longtable}
+

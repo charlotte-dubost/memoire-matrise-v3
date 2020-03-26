@@ -1,0 +1,1445 @@
+%% Pour changer les IEEEtran.bst controls, les usagers doivent créer une entrée “IEEEtranBSTCTL” %% dans leur fichier .bib :
+%% @IEEEtranBSTCTL{References:BSTcontrol,      
+%% CTLuse_forced_etal= "yes",    Pour faire apparaître et al. pour 3 auteurs et plus.
+%% CTLmax_names_forced_etal = "2",
+%% CTLnames_show_etal= "1",
+%% CTLuse_alt_spacing= "no",     Pour ne pas utiliser l'espacement entre mots pour les 
+%% références avec URL.
+%% CTLalt_stretch_factor= "1"     Le facteur d'étirement entre mots.
+%% }    
+
+
+%% To change the IEEEtran.bst controls, users should create an IEEEtranBSTCTL entry 
+%% in their .bib file:
+%% @IEEEtranBSTCTL{References:BSTcontrol,      
+%% CTLuse_forced_etal= "yes",      To display et al. for 3 and more authors.
+%% CTLmax_names_forced_etal = "2",
+%% CTLnames_show_etal= "1",
+%% CTLuse_alt_spacing= "no",     ''Shuts off the alternate interword spacing 
+%% for entries with URLs''.
+%% CTLalt_stretch_factor= "1"      ''If alternate interword spacing for entries with URLs is 
+%% enabled, this is the interword spacing stretch factor that will be used.''
+%% } 
+
+@IEEEtranBSTCTL{IEEEexample:BSTcontrol,
+CTLuse_forced_etal       = "yes",
+CTLmax_names_forced_etal = "3",
+CTLnames_show_etal       = "1" 
+}
+
+%% Même si pour le moment le champ doi n'est pas supporté par le style IEEEtran, il y sera 
+%% probablement intégré dans le futur. Si votre document a un doi, ajoutez-le.
+%% Dans les exemples en bas, le champ doi a été ajouté pour tous les documents qui en ont un.
+
+%% The DOI is not supported yet by the IEEEtran style, but it will probably be in the future.  
+%% If your document has a DOI, include it in the reference. 
+%% In the examples below, the DOI field was added in all the references that have a DOI.
+
+%% Livre imprimé, 7e édition / Printed book, 7th edition
+
+@book{Fedec2011,
+author = {Demey, Sven and Bartoux, Marie and Bénard,Rémy and Deschênes,Éric and Fasoli,Gérard and Maussier,Thierry and Sarno,Juho and Ubieta,Silvia},
+title = {Roue Cyr, Manuel pédagogique},
+year = {2011},
+publisher = {Fédération Europénne Des Ecoles de Cirque professionnelles (FEDEC)},
+address = {Stockholm, Suède},
+edition = {First}
+}
+
+@book{roark,
+	address = {New York},
+	edition = {7th ed},
+	title = {Roark's formulas for stress and strain},
+	isbn = {978-0-07-072542-3},
+	language = {en},
+	publisher = {McGraw-Hill},
+	author = {Roark, Raymond J. and Young, Warren C. and Budynas, Richard G.},
+	year = {2002},
+	keywords = {Strains and stresses, Strength of materials, Tables},
+	file = {Roark et al. - 2002 - Roark's formulas for stress and strain.pdf:files/21/Roark et al. - 2002 - Roark's formulas for stress and strain.pdf:application/pdf}
+
+%% Livre imprimé
+%% Printed book
+
+@book{Boyce2002,
+author = {Boyce, William E. and DiPrima, Richard Clyde},
+title = {Équations différentielles},
+year = {2002},
+publisher = {Chenelière},
+address = {Montréal, QC}
+}
+
+
+
+%% Livre imprimé avec éditeur intellectuel, 2e édition
+%% Edited printed book, 2nd edition
+
+@book{Fraas2010,
+editor = {Fraas, Lewis M. and Partain, Larry D.},
+title = {Solar Cells and Their Applications},
+year = {2010},
+publisher = {Wiley},
+address = {Hoboken, NJ},
+edition = {Second}
+}
+
+
+
+%% Livre électronique
+%% Electronic book
+
+@book{Manasreh2011,
+author = {Manasreh, Omar},
+title = {Introduction to Nanomaterials and Devices},
+year = {2011},
+publisher = {Wiley},
+address = {Hoboken, NJ},
+doi = {10.1002/9781118148419},
+url = {http://onlinelibrary.wiley.com/book/10.1002/9781118148419}
+}
+
+
+
+%% Livre électronique avec éditeur intellectuel, 3e édition
+%% Edited electronic book, 3rd edition
+
+@book{Chen2009,
+editor = {Chen, Wai-Kai},
+title = {Analog and {VLSI} Circuits: The Circuits and Filters Handbook},
+year = {2009},
+publisher = {{CRC} Press},
+address = {Boca Raton, FL},
+edition = {Third},
+url = {http://www.crcnetbase.com/doi/book/10.1201/9781420058925}
+}
+
+
+
+%% Section sans titre d'un livre électronique (des pages dans un livre)
+%% Section without title of an electronic book (some pages in a book)
+
+@inbook{Kizza2013,
+author = {Kizza, Joseph Migga},
+title = {Guide to Computer Network Security},
+year = {2013},
+publisher = {Springer},
+address = {London, UK},
+edition = {Second},
+pages = {119-120},
+doi = {10.1007/978-1-4471-4543-1},
+url = {http://dx.doi.org/10.1007/978-1-4471-4543-1}
+}
+
+
+
+%% Chapitre de livre électronique avec éditeur intellectuel
+%% Chapter in an edited electronic book
+
+@incollection{Haist2014,
+author = {Haist, Tobias and Hasler, Malte and Osten, Wolfang and Baranek, Michal},
+title = {Programmable microscopy},
+booktitle = {Multi-dimensional Imaging},
+editor = {Javidi, Bahram and Tajahuerce, Enrique and Andrés, Pedro},
+year = {2014},
+publisher = {{IEEE} Press-Wiley},
+address = {Chichester, UK},
+pages = {153-173},
+doi = {10.1002/9781118705766},
+url = {http://ieeexplore.ieee.org/xpl/bkabstractplus.jsp?bkn=6798070}
+}
+
+
+
+%% Entrée dans une encyclopédie
+%% Entry in an encyclopedia
+
+@incollection{Daintith2010,
+author = {Daintith, John and Martin, Elizabeth},
+title = {Lanthanoids},
+booktitle = {A Dictionary of Science},
+year = {2010},
+publisher = {Oxford University Press},
+address = {Oxford, UK},
+edition = {Sixth},
+pages = {460},
+url = {http://www.knovel.com/ web/portal/browse/display?_EXT_KNOVEL_DISPLAY_bookid=3287}
+}
+
+
+
+%% Entrée dans Wikipédia avec date de mise à jour
+%% Entry in Wikipedia with last update date
+
+@incollection{Corrosion2015,
+title = {Corrosion},
+booktitle = {Wikipédia},     	
+year = {2015},
+month = {14 aug.},          	
+url = {http://fr.wikipedia.org/wiki/Corrosion}    		
+}
+
+%% For the previous reference in English, use:
+%% title = {Corrosion},
+%% booktitle = {Wikipedia},
+%% month = {Aug. 14,},
+%% url = {https://en.wikipedia.org/wiki/Corrosion}
+
+
+
+
+%% Article de revue publié (imprimé)
+%% Published journal article (in print)
+
+%% Le style IEEE utilise les titres de revue abrégés. Dans le champ journal, saisir l'abréviation du titre de la revue (ou le titre complet, ce qui serait aussi acceptable).
+%% The IEEE style uses the abbreviated titles of journals. In the journal field, use the abbreviated title of journal (or its full title, which is also acceptable).
+
+@article{Batista,
+title = {Steady motion of a rigid disk of finite thickness on a horizontal plane},
+author = {Batista, Milan},
+journal = {{IEEE} International Journal of Non-Linear Mechanics},
+year = {2006},
+volume = {41},
+number = {4},
+pages = {605-621},
+month = may,
+}
+
+@article{ringing,
+	title = {The ringing of {Euler}'s disk},
+	issn = {1816448X, 18175155},
+	url = {http://nd.ics.org.ru/nd0502007/},
+	doi = {10.20537/nd0502007},
+	language = {en},
+	urldate = {2019-03-01},
+	journal = {Regular and Chaotic Dynamics},
+	author = {Kessler, P. and O'Reily, O.M.},
+	year = {2005},
+	pages = {247--260},
+	file = {Kessler and O'Reily - 2005 - The ringing of Euler's disk.pdf:files/100/Kessler and O'Reily - 2005 - The ringing of Euler's disk.pdf:application/pdf}
+
+@article{campos,
+	title = {Discrete {Lagrange}-d’{Alembert}-{Poincaré} equations for {Euler}’s disk},
+	volume = {106},
+	issn = {1578-7303, 1579-1505},
+	url = {http://link.springer.com/10.1007/s13398-011-0053-3},
+	doi = {10.1007/s13398-011-0053-3},
+	number = {1},
+	urldate = {2019-01-23},
+	journal = {Revista de la Real Academia de Ciencias Exactas, Fisicas y Naturales. Serie A. Matematicas},
+	author = {Campos, Cédric M. and Cendra, Hernán and Díaz, Viviana Alejandra and Martín de Diego, David},
+	month = mar,
+	year = {2012},
+	pages = {225--234},
+	file = {Campos et al. - 2012 - Discrete Lagrange-d’Alembert-Poincaré equations fo.pdf:files/71/Campos et al. - 2012 - Discrete Lagrange-d’Alembert-Poincaré equations fo.pdf:application/pdf}
+
+@article{yangkim,
+	title = {Jumping hoops},
+	volume = {80},
+	issn = {0002-9505},
+	url = {https://aapt.scitation.org/doi/abs/10.1119/1.3633700},
+	doi = {10.1119/1.3633700},
+	number = {1},
+	urldate = {2019-01-07},
+	journal = {American Journal of Physics},
+	author = {Yang, Eunjin and Kim, Ho-Young},
+	month = dec,
+	year = {2011},
+	pages = {19--23},
+	file = {Yang and Kim - 2011 - Jumping hoops.pdf:files/6/Yang and Kim - 2011 - Jumping hoops.pdf:application/pdf}
+}
+
+
+
+
+%% Article de revue publié (électronique)
+%% Published journal article (in electronic format)
+
+%% Le style IEEE utilise les titres de revue abrégés. Dans le champ journal, saisir l'abréviation du titre de la revue (ou le titre complet, ce qui serait aussi acceptable).
+%% The IEEE style uses the abbreviated titles of journals. In the journal field, use the abbreviated title of journal (or its full title, which is also acceptable).
+
+@article{Senjian2015,
+author = {Senjian, An and Boussaid, Farid and Bennamoun, Mohammed and Sohel, Ferdous},
+title = {Quantitative error analysis of bilateral filtering},
+journal = {{IEEE} Signal Processing Letters},		
+year = {2015},
+volume = {22},
+number = {2},
+pages = {202-206},
+month = sep,
+doi = {10.1109/LSP.2014.2353694},
+url = {http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6892949}
+}
+
+%% Pour pouvoir utiliser IEEEabrv et IEEEfull, dans la référence précédente, 
+%% le champ journal doit être :
+%% To use IEEEabrv and IEEEfull, in the previous reference, the journal field should be:
+%% journal = IEEE_J_SPL,	
+
+
+
+%% Article accepté pour publication et déjà disponible en ligne
+%% Journal article to be published, already available online
+
+%% Le style IEEE utilise les titres de revue abrégés. Dans le champ journal, saisir l'abréviation du titre de la revue (ou le titre complet, ce qui serait aussi acceptable).
+%% The IEEE style uses the abbreviated titles of journals. In the journal field, use the abbreviated title of journal (or its full title, which is also acceptable).
+
+@article{Choy2016,
+author = {Choy, Wallace C. H. and Ren, Xingang},
+title = {Plasmon-electrical effects on organic solar cells by incorporation of metal nanostructures},
+journal = {{IEEE} Journal of Selected Topics in Quantum Electronics},
+year = {2016},
+volume = {22},
+number = {1},
+pages = {1-9},
+month = jan,
+url = {http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7119560},
+note = {à paraître}		
+}
+
+%% For the previous reference in English, use:
+%% note = {to be published}	
+
+
+
+%% Article soumis qui n’est pas encore accepté
+%% Submitted article that was not yet accepted
+
+%% Le style IEEE utilise les titres de revue abrégés. Dans le champ journal, saisir l'abréviation du titre de la revue (ou le titre complet, ce qui serait aussi acceptable).
+%% The IEEE style uses the abbreviated titles of journals. In the journal field, use the abbreviated title of journal (or its full title, which is also acceptable).
+
+@article{Choy2015,
+author = {Choy, Wallace C. H. and Ren, Xingang},
+title = {Plasmon-electrical effects on organic solar cells by incorporation of metal nanostructures},
+journal = {{IEEE} Journal of Selected Topics in Quantum Electronics},
+year = {2015},
+month = sept,
+note = {soumis pour publication}
+}
+
+%% For the previous reference in English, use:
+%% note = {submitted for publication}
+
+
+
+%% Article soumis qui n’est pas encore accepté
+%% Submitted article that was not yet accepted
+
+@unpublished{Choy2015a,
+author = {Choy, Wallace C. H. and Ren, Xingang},
+title = {Plasmon-electrical effects on organic solar cells by incorporation of metal nanostructures},
+year = {2015},
+note = {soumis pour publication}
+}
+
+%% For the previous reference in English, use:
+%% note = {submitted for publication}
+
+
+
+%% Numéro d’une revue académique (électronique)
+%% Journal issue (in electronic format)
+
+%% Le style IEEE utilise les titres de revue abrégés. Dans le champ title, saisir l'abréviation du titre de la revue (ou le titre complet, ce qui serait aussi acceptable).
+%% The IEEE style uses the abbreviated titles of journals. In the title field, use the abbreviated title of journal (or its full title, which is also acceptable).
+
+@periodical{IEEE2012,
+title = {{IEEE} Transactions on Antennas and Propagation"},
+year = {2012},
+volume = {60},
+number = {4},
+month = apr,
+url = {http://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=6178353&punumber=8}
+}
+
+
+
+%% Article de périodique électronique
+%% Periodical article available online
+
+@article{Gervais2013,
+title = {Plagiat: Quel vilain mot!},
+author = {Gervais, Martine},
+journal = {Plan},
+year = {2013},
+volume = {L},
+number = {2},
+pages = {46-47},
+month = mar,
+url = {http://www.oiq.qc.ca/Documents/DCAP/chroniques_PLAN/ethique_deontologie/2013_ethique_deontologie/2013_eth_deonto_PLAN_03_FR.pdf}
+}
+
+
+
+%% Article de périodique électronique, sans auteur mentionné
+%% Periodical article without author, available online
+
+@misc{Ledevoir2013,
+howpublished = {Le Devoir},
+title = {Des satellites canadiens s'élancent de l'{I}nde},
+year = {2013},
+month = feb,
+day={25},
+url = {http://www.ledevoir.com/societe/science-et-technologie/371795/des-satellites-canadiens-s-elancent-de-l-inde}
+}
+
+
+
+%% Communication de conférence électronique
+%% Le style IEEE utilise les noms de conférences abrégés. Dans le champ booktitle, saisir l'abréviation du nom de conférence (ou le nom complet, ce qui serait aussi acceptable).
+%% Conference paper in electronic format
+%% The IEEE style uses the abbreviated conference names. In the booktitle field, use the abbreviated name of conference (or its full name, which is also acceptable).
+
+@inproceedings{Madani2010,
+author = {Madani, Nioosha and Guerrouj, Latifa and Di Penta, Massimiliano and Guéhéneuc, Yann-Gaël and Antoniol, Giuliano},
+title = {Recognizing words from source code identifiers using speech recognition techniques},
+booktitle = {14th European Conference on Software Maintenance and Reengineering ({CSMR})},
+year = {2010},
+address = {Madrid, Spain},
+month = {15-18 mars},		
+intype = {communication présentée à},		
+pages = {68-77},
+doi = {10.1109/CSMR.2010.31},
+url = {http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5714421}
+}
+
+%% For the previous reference in English, use:
+%% month = {Mar. 15-18,},
+%% intype = {presented at the},
+
+
+
+%% Mémoire de maîtrise électronique
+%% Master's thesis in electronic format
+
+@mastersthesis{Massicotte2013,
+author = {Massicotte, Geneviève},
+title = {Biocapteur ampérométrique intégré pour une unité de détection dédiée aux neurotransmetteurs},
+school = {Dép. de génie électrique, École Polytechnique de Montréal}, 
+year = {2013},
+address = {Montréal, QC},
+type = {mémoire de maîtrise},		
+url = {http://publications.polymtl.ca/1319/}
+}
+
+%% For the previous reference in English, use:
+%% type = {Master's thesis},
+
+
+
+%% Thèse de doctorat électronique
+%% PhD dissertation in electronic format
+
+@phdthesis{Rossi2011,
+author = {Rossi, Angelo},
+title = {Sécurité dans les réseaux mobiles de nouvelle génération},
+school = {Dép. de génie informatique et génie logiciel, École Polytechnique de Montréal},
+year = {2011},
+address = {Montréal, QC},
+type = {thèse de doctorat},		
+url = {http://publications.polymtl.ca/614/}
+}
+
+%% For the previous reference in English, use:
+%% type = {PhD dissertation},
+
+
+
+%% Raport technique imprimé
+%% Technical report (in print)
+
+@techreport{DeSantis2002,
+author = {De Santis, Romano Mario},
+title = {Enhanced tuning of industrial controllers via a dual loop {pid} form},
+institution = {Dép. de genie électrique, École Polytechnique de Montréal},
+year = {2002},
+address = {Montréal, QC},
+number = {EPM/RT 01-06},
+type = {Rapport technique}		
+}
+ 
+%% For the previous reference in English, use:
+%% type = {Technical report}
+ 
+ 
+  
+%% Raport technique électronique
+%% Technical report (in electronic format)
+
+@techreport{Cohen2006,
+author = {Cohen, Amit and Thorne, David},
+title = {Migration to {E}thernet-based {DSL} aggregation},
+institution = {Architecture and Transport Working Group},
+year = {2006},
+number = {DSL Forum TR-101},
+url = {https://www.broadband-forum.org/technical/download/TR-101.pdf}
+}
+
+
+
+%% Brevet canadien imprimé ou électronique
+%% Canadian patent (in print or electronic format)
+
+@patent{Thorsson2014,
+author = {Thorsson, Brynjolfur and Thorvaldsson, Bjorn and Asgeirsson, Asgeir}, 
+title = {Tracing items through a non-sequential process},
+number = {CA 2 634 408},		
+year = {2014},
+month = {13 mai},			
+yearfiled = {2006},
+url = {http://brevets-patents.ic.gc.ca/opic-cipo/cpd/eng/patent/2634408/summary.html},
+howpublished = {Canadian Intellectual Property Office}
+}
+
+%% For the previous reference in English, use:
+%% nationality = {Canadian},	
+%% number = {2 634 408},	
+%% month = {May 13},	
+
+
+
+%% Brevet américain imprimé ou électronique
+%% American patent (in print or electronic format)
+
+@patent{Schirmer2012,
+author = {Schirmer, Andreas and Rude, Mathew and Brubaker, Shane},
+title = {Method for producing a fatty alcohol or fatty aldehyde},	
+number = {U.S. 8 268 599 B2},	
+year = {2012},
+month = {18 sept.},			
+url = {http://www.google.com/patents/US8268599?dq=8,268,599&hl=fr&sa=X&ei=uI_UUJGGEMXNrQGR0oDADw&ved=0CDsQ6AEwAA}
+}
+
+%% For the previous reference in English, use:
+%% nationality = {U.S.},	
+%% number = {8 268 599 B2},
+%% year = {2012},
+%% month = {Sept. 18},	
+
+
+
+%% Demande de brevet américain
+%% American patent application (in print or electronic format)
+
+@patent{Sakai2015,
+author = {Sakai, Takashi and Kosaka, Shunsuke and Kunisaki, Akira},
+title = {Industrial robot},
+number = {U.S. 2015/0246449 A1},		
+year = {2015},
+month = {3 sept.},			
+type = {Demande de brevet},	
+url = {http://appft.uspto.gov/netacgi/nph-Parser?TERM1=20150246449&Sect1=PTO1&Sect2=HITOFF&d=PG01&p=1&u=\%2Fnetahtml\%2FPTO\%2Fsrchnum.html&r=0&f=S&l=50}
+}
+
+%% Utiliser \& au lieu de & si le lien se transforme en commentaire.
+
+%% For the previous reference in English, use:
+%% nationality = {U.S.},
+%% number = {2015/0246449 A1},
+%% month = {Sept. 3},
+%% type = {Patent appl.},
+
+%% Change & with \& if the link changes in comment.
+ 
+ 
+ 
+%% Norme imprimée
+%% Standard in print
+
+@standard{CSA2002,
+title = {L'ISO 14001 et l'état de la conformité au {C}anada},	
+number = {CSA PLUS 1162},
+address = {Toronto, ON},
+year = {2002}
+}
+
+%% For the previous reference in English, use:
+%% title = {ISO 14001 and Compliance in {C}anada},	
+
+
+
+%% Norme électronique
+%% Standard in electronic format
+
+@standard{Electrical2006,
+title = {{IEEE} Recommended Practice for Powering and Grounding Electronic Equipment},
+number = {1100-2005},
+year = {2006},
+address = {Piscataway, NJ},
+doi = {10.1109/IEEESTD.2006.216391},
+url = {http://ieeexplore.ieee.org/servlet/opac?punumber=10911}
+}
+
+
+
+%% Page Web
+%% Web page
+
+@electronic{Inertie,
+author = {Inertie,Valérie},
+title = {The Cyr wheel},
+year = {2019},
+url = {http://www.inertie.ca/historique_roue.php}
+}
+
+@electronic{Inertiehist,
+author = {Inertie,Valérie},
+title = {History of previous wheel devices},
+year = {2019},
+url = {http://www.inertie.ca/historique_appareils.php}
+}
+
+@electronic{gymmedia,
+author = {{Gymmedia}},
+title = {The real History of Mono Wheel},
+year = {2012},
+url = {http://www.gymmedia.com/wheel-gymnastics/real-History-Mono-Wheel-Cyr-Wheel}
+}
+
+@electronic{howstuffwork,
+author = {Roos,Dave},
+title = {History of Acrobatic Wheels},
+year = {2015},
+url = {https://entertainment.howstuffworks.com/arts/circus-arts/cyr-wheel1.htm}
+}
+
+@electronic{corbin,
+author = {Dunn,Corbin},
+title = {Circus/Cyr Wheel},
+year = {2016},
+url = {https://www.corbinstreehouse.com/blog/category/circus-and-silk/}
+}
+
+@electronic{danielcyr,
+author = {Festival mondial du cirque de demain},
+title = {Gallery of the 24th festival mondial du cirque de demain},
+year = {2003},
+url = {https://www.cirquededemain.paris/en/medias/galleries/gallery/25}
+}
+
+@electronic{shutterstock,
+author = {Shutterstock},
+title = {Images: Cyr wheel},
+year = {2020},
+url = {https://www.shutterstock.com/fr/search/cyr+wheel}
+}
+
+%% Utiliser {} si l'auteur est une organisation.
+%% Use {} if the author is an organisation.
+
+
+%% Logiciel
+%% Software
+
+@electronic{Druide2012,
+author = {{Druide informatique}},
+title = {Antidote {RX} (Version 8)},
+year = {2012},
+url = {http://www.druide.com/antidote.html}
+} 
+
+
+%% Communication personnelle
+%% Personal communication
+
+@misc{Com2018,
+author = {Desjardins, Laurent},
+year = {2018},
+month = {13 mai},	
+note = {communication personnelle}		
+}
+
+%% For the previous reference in English, use:
+%% month = {May 13,},	
+%% note = {private communication}
+
+
+
+@article{raux_rolling_2010,
+	title = {Rolling {Ribbons}},
+	volume = {105},
+	url = {https://link.aps.org/doi/10.1103/PhysRevLett.105.044301},
+	doi = {10.1103/physrevlett.105.044301},
+	language = {en},
+	number = {4},
+	urldate = {2019-01-07},
+	journal = {Physical Review Letters},
+	author = {Raux, P. S. and Reis, P. M. and Bush, J. W. M. and Clanet, C.},
+	month = jul,
+	year = {2010},
+	file = {Raux et al. - 2010 - Rolling Ribbons.pdf:files/7/Raux et al. - 2010 - Rolling Ribbons.pdf:application/pdf}
+}
+
+@article{watson_hanging_1981,
+	title = {Hanging an elastic ring},
+	volume = {23},
+	issn = {0020-7403},
+	url = {http://www.sciencedirect.com/science/article/pii/0020740381900278},
+	doi = {10.1016/0020-7403(81)90027-8},
+	abstract = {A thin flexible elastic circular ring is hung at one point. The ring deforms due to its own weight. The problem depends on a non-dimensional parameter B representing the relative importance of density and length to rigidity. The heavy elastica equations are solved by perturbation for small B, by a quasi-Newton method for intermediate B, and by a homotopy method for large B. The approximate results show good agreement with numerical integration for B {\textless} 20.},
+	number = {3},
+	urldate = {2019-01-07},
+	journal = {International Journal of Mechanical Sciences},
+	author = {Watson, L. T. and Wang, C. Y.},
+	month = jan,
+	year = {1981},
+	pages = {161--167},
+	file = {ScienceDirect Full Text PDF:files/8/Watson and Wang - 1981 - Hanging an elastic ring.pdf:application/pdf;ScienceDirect Snapshot:files/9/0020740381900278.html:text/html}
+}
+
+@article{tokovyy_determination_2010,
+	title = {Determination of stresses and displacements in a thin annular disk subjected to diametral compression},
+	volume = {165},
+	issn = {1072-3374, 1573-8795},
+	url = {http://link.springer.com/10.1007/s10958-010-9803-6},
+	doi = {10.1007/s10958-010-9803-6},
+	language = {en},
+	number = {3},
+	urldate = {2019-01-09},
+	journal = {Journal of Mathematical Sciences},
+	author = {Tokovyy, Yu. V. and Hung, K.-M. and Ma, C.-C.},
+	month = mar,
+	year = {2010},
+	pages = {342--354},
+	file = {Tokovyy et al. - 2010 - Determination of stresses and displacements in a t.pdf:files/13/Tokovyy et al. - 2010 - Determination of stresses and displacements in a t.pdf:application/pdf}
+}
+
+@article{durelli_stresses_1986,
+	title = {Stresses and {Displacements} on the {Boundaries} of {Circular} {Rings} {Diametrically} {Loaded}},
+	volume = {53},
+	issn = {00218936},
+	url = {http://AppliedMechanics.asmedigitalcollection.asme.org/article.aspx?articleid=1408412},
+	doi = {10.1115/1.3171715},
+	language = {en},
+	number = {1},
+	urldate = {2019-01-09},
+	journal = {Journal of Applied Mechanics},
+	author = {Durelli, A. J. and Lin, Y. H.},
+	year = {1986},
+	pages = {213},
+	file = {Durelli et Lin - 1986 - Stresses and Displacements on the Boundaries of Ci.pdf:files/17/Durelli et Lin - 1986 - Stresses and Displacements on the Boundaries of Ci.pdf:application/pdf}
+}
+
+
+
+@article{liu_analysis_1974,
+	title = {Analysis of a {Thin} {Elastic} {Ring} {Under} {Arbitrary} {Loading}},
+	volume = {96},
+	issn = {00220817},
+	url = {http://ManufacturingScience.asmedigitalcollection.asme.org/article.aspx?articleid=1443900},
+	doi = {10.1115/1.3438455},
+	language = {en},
+	number = {3},
+	urldate = {2019-01-09},
+	journal = {Journal of Engineering for Industry},
+	author = {Liu, J. Y. and Chiu, Y. P.},
+	year = {1974},
+	pages = {870},
+	file = {Liu et Chiu - 1974 - Analysis of a Thin Elastic Ring Under Arbitrary Lo.pdf:files/23/Liu et Chiu - 1974 - Analysis of a Thin Elastic Ring Under Arbitrary Lo.pdf:application/pdf}
+}
+
+@article{enders_54_1996,
+	title = {(54) {COMPOSITE} {BICYCLE} {WHEEL}},
+	abstract = {A bicycle wheel with composite fiber resin spoke and rim Structures having opposing spokes radiating from a central hub, the spokes being filament wound continuously one to the other across the central hub. The configuration provides for lower resistance to lateral wind, and for light weight resulting from the use of composite structures with fibers substantially oriented to resist wheel loads.},
+	language = {en},
+	author = {Enders, Mark L and Ogden, North},
+	year = {1996},
+	pages = {16},
+	file = {Enders et Ogden - 1996 - (54) COMPOSITE BICYCLE WHEEL.pdf:files/26/Enders et Ogden - 1996 - (54) COMPOSITE BICYCLE WHEEL.pdf:application/pdf}
+}
+
+@article{odonnell_54_nodate,
+	title = {54) {COMPOSITE} {WHEEL} {FOR} {IN}-{LDNE} {ROLLERSKATE}},
+	language = {en},
+	author = {O'Donnell, Patrick J},
+	pages = {9},
+	file = {O'Donnell - 54) COMPOSITE WHEEL FOR IN-LDNE ROLLERSKATE.pdf:files/28/O'Donnell - 54) COMPOSITE WHEEL FOR IN-LDNE ROLLERSKATE.pdf:application/pdf}
+}
+
+@incollection{mallick_manufacturing_nodate,
+	title = {Manufacturing},
+	language = {en},
+	booktitle = {Fiber-{Reinforced} {Composites}},
+	author = {Mallick, P K},
+	pages = {640},
+	file = {Mallick - Fiber-Reinforced Composites.pdf:files/33/Mallick - Fiber-Reinforced Composites.pdf:application/pdf}
+}
+
+@article{cossin_mesure_nodate,
+	title = {{MESURE} {DES} {EFFORTS} {DYNAMIQUES} {DANS} {LES} {AGRÈS} {DE} {CIRQUE}},
+	language = {fr},
+	author = {Cossin, Marion},
+	pages = {127}
+}
+
+@article{farahani_manufacturing_2012,
+	title = {Manufacturing composite beams reinforced with three-dimensionally patterned-oriented carbon nanotubes through microfluidic infiltration},
+	volume = {41},
+	issn = {02613069},
+	url = {https://linkinghub.elsevier.com/retrieve/pii/S0261306912003068},
+	doi = {10.1016/j.matdes.2012.05.005},
+	abstract = {Functionalized single-walled carbon nanotubes (SWCNTs)/epoxy nanocomposite suspensions were prepared and injected into three-dimensional (3D) interconnected microﬂuidic networks in order to fabricate composite beams reinforced with patterned-oriented nanotubes. The microﬂuidic networks were fabricated by the robotized direct deposition of fugitive ink ﬁlaments in a layer-by-layer sequence onto substrates, followed by their epoxy encapsulation and the ink removal. Then, the nanocomposite suspensions prepared by ultrasonication and three-roll mill mixing methods were injected into the empty networks under two different controlled and constant pressures in order to subject the suspensions to different shear conditions in the microchannels. Morphological studies revealed that the SWCNTs were preferentially aligned in the microchannels along the ﬂow direction at the higher injection pressure. The improvement of Young’s modulus of the manufactured 3D-reinforced rectangular beams prepared at the high injection pressure was almost doubled when compared to that of beams prepared at the low injection pressure. Finally, the stiffness of the 3D-reinforced beams was compared with the theoretically predicted values obtained from a micromechanical model. The analytical predictions give a close estimation of the stiffness at different micro-injection conditions. Based on the experimental and theoretical results, the present manufacturing technique enables the spatial orientation of nanotube in the ﬁnal product by taking advantage of shear ﬂow combined with dimensional constraining inside the microﬂuidic channels.},
+	language = {en},
+	urldate = {2019-01-16},
+	journal = {Materials \& Design},
+	author = {Farahani, Rouhollah D. and Pahlavanpour, Maryam and Dalir, Hamid and Aissa, Brahim and Khakani, My Ali El and Lévesque, Martin and Therriault, Daniel},
+	month = oct,
+	year = {2012},
+	pages = {214--225},
+	file = {Farahani et al. - 2012 - Manufacturing composite beams reinforced with thre.pdf:files/38/Farahani et al. - 2012 - Manufacturing composite beams reinforced with thre.pdf:application/pdf}
+}
+
+@article{cossin_mesure_nodate-1,
+	title = {{MESURE} {DES} {EFFORTS} {DYNAMIQUES} {DANS} {LES} {AGRÈS} {DE} {CIRQUE}},
+	language = {fr},
+	author = {Cossin, Marion},
+	pages = {127},
+	file = {Cossin - MESURE DES EFFORTS DYNAMIQUES DANS LES AGRÈS DE CI.pdf:files/39/Cossin - MESURE DES EFFORTS DYNAMIQUES DANS LES AGRÈS DE CI.pdf:application/pdf}
+}
+
+@incollection{farahani_6.13_2018,
+	title = {6.13 {Additive} {Manufacturing} of {Multifunctional} {Nanocomposites} and {Composites}},
+	isbn = {978-0-08-100534-7},
+	url = {https://linkinghub.elsevier.com/retrieve/pii/B9780128035818100190},
+	language = {en},
+	urldate = {2019-01-16},
+	booktitle = {Comprehensive {Composite} {Materials} {II}},
+	publisher = {Elsevier},
+	author = {Farahani, Rouhollah D. and Therriault, Daniel and Dubé, Martine and Bodkhe, Sampada and Mahdavi, Mohammadhadi},
+	year = {2018},
+	doi = {10.1016/B978-0-12-803581-8.10019-0},
+	pages = {380--407},
+	file = {Farahani et al. - 2018 - 6.13 Additive Manufacturing of Multifunctional Nan.pdf:files/40/Farahani et al. - 2018 - 6.13 Additive Manufacturing of Multifunctional Nan.pdf:application/pdf}
+}
+
+@article{bodkhe_one-step_2017,
+	title = {One-{Step} {Solvent} {Evaporation}-{Assisted} 3D {Printing} of {Piezoelectric} {PVDF} {Nanocomposite} {Structures}},
+	volume = {9},
+	issn = {1944-8244, 1944-8252},
+	url = {http://pubs.acs.org/doi/10.1021/acsami.7b04095},
+	doi = {10.1021/acsami.7b04095},
+	abstract = {Development of a 3D printable material system possessing inherent piezoelectric properties to fabricate integrable sensors in a single-step printing process without poling is of importance to the creation of a wide variety of smart structures. Here, we study the eﬀect of addition of barium titanate nanoparticles in nucleating piezoelectric βpolymorph in 3D printable polyvinylidene ﬂuoride (PVDF) and fabrication of the layer-bylayer and self-supporting piezoelectric structures on a micro- to millimeter scale by solvent evaporation-assisted 3D printing at room temperature. The nanocomposite formulation obtained after a comprehensive investigation of composition and processing techniques possesses a piezoelectric coeﬃcient, d31, of 18 pC N−1, which is comparable to that of typical poled and stretched commercial PVDF ﬁlm sensors. A 3D contact sensor that generates up to 4 V upon gentle ﬁnger taps demonstrates the eﬃcacy of the fabrication technique. Our one-step 3D printing of piezoelectric nanocomposites can form readyto-use, complex-shaped, ﬂexible, and lightweight piezoelectric devices. When combined with other 3D printable materials, they could serve as stand-alone or embedded sensors in aerospace, biomedicine, and robotic applications.},
+	language = {en},
+	number = {24},
+	urldate = {2019-01-16},
+	journal = {ACS Applied Materials \& Interfaces},
+	author = {Bodkhe, Sampada and Turcot, Gabrielle and Gosselin, Frederick P. and Therriault, Daniel},
+	month = jun,
+	year = {2017},
+	pages = {20833--20842},
+	file = {Bodkhe et al. - 2017 - One-Step Solvent Evaporation-Assisted 3D Printing .pdf:files/41/Bodkhe et al. - 2017 - One-Step Solvent Evaporation-Assisted 3D Printing .pdf:application/pdf}
+}
+
+@article{bodkhe_simultaneous_2018,
+	title = {Simultaneous 3D {Printing} and {Poling} of {PVDF} and {Its} {Nanocomposites}},
+	volume = {1},
+	issn = {2574-0962, 2574-0962},
+	url = {http://pubs.acs.org/doi/10.1021/acsaem.7b00337},
+	doi = {10.1021/acsaem.7b00337},
+	abstract = {Given the ever-increasing demand for customization and miniaturization, in situ three-dimensional (3D) printing of piezoelectric polymers comes as an eﬃcient means to cater to smart structures via multimaterial printing. Applying our hybrid printing technique to polyvinylideneﬂuoride−barium-titanate (PVDF−BaTiO3) nanocomposites, to combine the fabrication and high-voltage poling steps, shrinks the manufacturing time, overcomes the disadvantages of adherence in nonconformal piezoelectric ﬁlms or fabrics, and increases the sensitivity and scope for on-demand applications. A remarkable 300\% improvement in piezoelectric charge output is achieved upon the addition of 10 wt \% BaTiO3 nanoparticles and application of an electric ﬁeld of 1 MV m−1, compared with printed unpoled neat PVDF. We demonstrate the application of the in situ poling process in the form of sensors printed directly on a shoe insole for gait analysis. The sensors fabricated in this work eﬀectively distinguish between walking and stamping as both portable in-shoe sensor as well as sensors attached to the ground.},
+	language = {en},
+	number = {6},
+	urldate = {2019-01-16},
+	journal = {ACS Applied Energy Materials},
+	author = {Bodkhe, Sampada and Rajesh, P. S. M. and Gosselin, Frederick P. and Therriault, Daniel},
+	month = jun,
+	year = {2018},
+	pages = {2474--2482},
+	file = {Bodkhe et al. - 2018 - Simultaneous 3D Printing and Poling of PVDF and It.pdf:files/42/Bodkhe et al. - 2018 - Simultaneous 3D Printing and Poling of PVDF and It.pdf:application/pdf}
+}
+
+@article{cossin_making_2017,
+	title = {Making single-point aerial circus disciplines safer},
+	volume = {231},
+	issn = {1754-3371, 1754-338X},
+	url = {http://journals.sagepub.com/doi/10.1177/1754337117705478},
+	doi = {10.1177/1754337117705478},
+	abstract = {The purpose of this study was to measure the dynamic tension force between the apparatus and the hanging equipment of five aerial circus apparatuses and to recommend minimal loading requirements in rigging and design. The forces generated by different acrobatic movements were measured and synchronized with video recordings. Sixteen students of the National Circus School of Montre´al (Canada) participated in the study. The maximal forces were analyzed and characterized with respect to the discipline, the type of movement and the schooling level of the student. The maximal force measured was 5.3 kN performed in the discipline of aerial straps, equivalent to 7.9 times the bodyweight of the performer. A minimal breaking strength of 22 kN for the hanging point and all the equipments holding the rig is recommended. A minimal breaking strength of 22 kN for straps, 17 kN for rope and 12 kN for silk, aerial hoop and dance trapeze is recommended.},
+	language = {en},
+	number = {4},
+	urldate = {2019-01-16},
+	journal = {Proceedings of the Institution of Mechanical Engineers, Part P: Journal of Sports Engineering and Technology},
+	author = {Cossin, Marion and Ross, Annie and Gosselin, Frédérick P},
+	month = dec,
+	year = {2017},
+	pages = {362--373},
+	file = {Cossin et al. - 2017 - Making single-point aerial circus disciplines safe.pdf:files/43/Cossin et al. - 2017 - Making single-point aerial circus disciplines safe.pdf:application/pdf}
+}
+
+@article{cossin_repeatability_2018,
+	title = {Repeatability of force signals in aerial circus straps},
+	volume = {232},
+	issn = {1754-3371, 1754-338X},
+	url = {http://journals.sagepub.com/doi/10.1177/1754337117732901},
+	doi = {10.1177/1754337117732901},
+	abstract = {The aim of this study is to develop a method for assessing movement variability of circus acrobats. An analysis of the repeatability of force signals is used to quantify variability. Six students from the National Circus School of Montre´al performed 5–10 trials of an acrobatic movement called dislock in aerial circus straps while tension force was measured at the hanging point of the aerial apparatus. The repeatability of force signals was calculated with three statistical methods: time-averaged standard deviation, intraclass correlation and root mean square error. These methods were compared with the ratings of a circus coach who ranked each acrobat’s trial with regard to the movement variability. The standard deviation and the intraclass correlation methods are commonly used to quantify the agreement between measurements in biomechanics, while the root mean square error method is regularly employed to quantify the agreement between measurements and a model. All participants performed the movement with little variability (intraclass correlation 5 0.8). The results of the three methods were in good agreement with the coach’s assessment. The root mean square error method, in particular, showed perfect agreement and is therefore considered the best measure of repeatability. In the future, the proposed method could be used by coaches or artists training alone, allowing a new form of feedback.},
+	language = {en},
+	number = {3},
+	urldate = {2019-01-16},
+	journal = {Proceedings of the Institution of Mechanical Engineers, Part P: Journal of Sports Engineering and Technology},
+	author = {Cossin, Marion and Ross, Annie and Gosselin, Frédérick P},
+	month = sep,
+	year = {2018},
+	pages = {225--235},
+	file = {Cossin et al. - 2018 - Repeatability of force signals in aerial circus st.pdf:files/44/Cossin et al. - 2018 - Repeatability of force signals in aerial circus st.pdf:application/pdf}
+}
+
+@article{farahani_three-dimensional_2016,
+	title = {Three-{Dimensional} {Printing} of {Multifunctional} {Nanocomposites}: {Manufacturing} {Techniques} and {Applications}},
+	volume = {28},
+	issn = {09359648},
+	shorttitle = {Three-{Dimensional} {Printing} of {Multifunctional} {Nanocomposites}},
+	url = {http://doi.wiley.com/10.1002/adma.201506215},
+	doi = {10.1002/adma.201506215},
+	language = {en},
+	number = {28},
+	urldate = {2019-01-16},
+	journal = {Advanced Materials},
+	author = {Farahani, Rouhollah D. and Dubé, Martine and Therriault, Daniel},
+	month = jul,
+	year = {2016},
+	pages = {5794--5821},
+	file = {Farahani et al. - 2016 - Three-Dimensional Printing of Multifunctional Nano.pdf:files/45/Farahani et al. - 2016 - Three-Dimensional Printing of Multifunctional Nano.pdf:application/pdf}
+}
+
+@article{ma_dynamics_2016,
+	title = {Dynamics of a {Spinning} {Disk}},
+	volume = {83},
+	issn = {0021-8936},
+	url = {http://appliedmechanics.asmedigitalcollection.asme.org/article.aspx?doi=10.1115/1.4032993},
+	doi = {10.1115/1.4032993},
+	language = {en},
+	number = {6},
+	urldate = {2019-01-17},
+	journal = {Journal of Applied Mechanics},
+	author = {Ma, Daolin and Liu, Caishan},
+	month = mar,
+	year = {2016},
+	pages = {061003},
+	file = {Ma and Liu - 2016 - Dynamics of a Spinning Disk.pdf:files/57/Ma and Liu - 2016 - Dynamics of a Spinning Disk.pdf:application/pdf}
+}
+
+@article{cross_effects_2018,
+	title = {Effects of rolling friction on a spinning coin or disk},
+	volume = {39},
+	issn = {0143-0807},
+	url = {http://stacks.iop.org/0143-0807/39/i=3/a=035005},
+	doi = {10.1088/1361-6404/aaaac9},
+	abstract = {Experimental and theoretical results are presented concerning the motion of a spinning disk on a horizontal surface. The disk precesses about a vertical axis while falling either quickly or slowly onto the surface depending on the coefficient of rolling friction. The rate of fall also depends on the offset distance, in the rolling direction, between the centre of mass and the line of action of the normal reaction force. Euler’s angular momentum equations are solved to obtain estimates of both the coefficient of friction and the offset distance for a 50.6 mm diameter brass disk spinning on three different surfaces. The fall times varied from about 3 s on P800 emery paper to about 30 s on glass.},
+	language = {en},
+	number = {3},
+	urldate = {2019-01-17},
+	journal = {European Journal of Physics},
+	author = {Cross, Rod},
+	year = {2018},
+	pages = {035005},
+	file = {IOP Full Text PDF:files/58/Cross - 2018 - Effects of rolling friction on a spinning coin or .pdf:application/pdf}
+}
+
+@article{ma_daolin_rolling_2014,
+	title = {Rolling friction and energy dissipation in a spinning disc},
+	volume = {470},
+	url = {https://royalsocietypublishing.org/doi/full/10.1098/rspa.2014.0191},
+	doi = {10.1098/rspa.2014.0191},
+	abstract = {This paper presents the results of both experimental and theoretical investigations for the dynamics of a steel disc spinning on a horizontal rough surface. With a pair of high-speed cameras, a stereoscopic vision method is adopted to perform omnidirectional measurements for the temporal evolution of the disc's motion. The experiment data allow us to detail the dynamics of the disc, and consequently to quantify its energy. From our experimental observations, it is confirmed that rolling friction is a primary factor responsible for the dissipation of the energy. Furthermore, a mathematical model, in which the rolling friction is characterized by a resistance torque proportional to the square of precession rate, is also proposed. By employing the model, we perform qualitative analysis and numerical simulations. Both of them provide results that precisely agree with our experimental findings.},
+	number = {2169},
+	urldate = {2019-01-17},
+	journal = {Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences},
+	author = {{Ma Daolin} and {Liu Caishan} and {Zhao Zhen} and {Zhang Hongjian}},
+	month = sep,
+	year = {2014},
+	pages = {20140191},
+	file = {Full Text PDF:files/61/Ma Daolin et al. - 2014 - Rolling friction and energy dissipation in a spinn.pdf:application/pdf;Snapshot:files/60/rspa.2014.html:text/html}
+}
+
+@article{irvine_ring_nodate,
+	title = {{RING} {VIBRATION} {MODES}},
+	language = {en},
+	author = {Irvine, Tom},
+	pages = {15},
+	file = {Irvine - RING VIBRATION MODES.pdf:files/63/Irvine - RING VIBRATION MODES.pdf:application/pdf}
+}
+
+@article{rao_-plane_1969,
+	title = {In-{Plane} {Flexural} {Vibrations} of {Circular} {Rings}},
+	volume = {36},
+	issn = {00218936},
+	url = {http://AppliedMechanics.asmedigitalcollection.asme.org/article.aspx?articleid=1475271},
+	doi = {10.1115/1.3564726},
+	language = {en},
+	number = {3},
+	urldate = {2019-01-21},
+	journal = {Journal of Applied Mechanics},
+	author = {Rao, S. S. and Sundararajan, V.},
+	year = {1969},
+	pages = {620},
+	file = {Rao et Sundararajan - 1969 - In-Plane Flexural Vibrations of Circular Rings.pdf:files/65/Rao et Sundararajan - 1969 - In-Plane Flexural Vibrations of Circular Rings.pdf:application/pdf}
+}
+
+@article{bhattacharjee_spinning_2014,
+	title = {Spinning disks under gravity},
+	volume = {107},
+	issn = {0295-5075, 1286-4854},
+	url = {http://stacks.iop.org/0295-5075/107/i=5/a=54007?key=crossref.48a8ac7b18cfb0f86d0465566184394e},
+	doi = {10.1209/0295-5075/107/54007},
+	abstract = {In this work I examine the counterintuitive accelerating rotation of a disk-shaped object, such as a coin, when it is released on a smooth surface with a spin about a vertical axis. The only existing theoretical model examines the terminal stages of the motion and proposes air drag as the primary agency behind the sudden stop. Subsequent experimental work has tended to favour rolling friction or sliding friction as the principal motivator. Here I show that a combination of rolling friction and sliding friction is necessary and suﬃcient to understand the complete motion of the disk. Rolling friction is dominant in the initial stages of the fall but it changes to sliding friction after the disk dips below a certain angle with the horizontal plane. The change occurs as a result of the inability of the normal reaction to provide the torque for the motion. Qualitatively, this model can account for all the observations associated with the disk. Quantitative analysis has been carried out with the friction treated as perturbations on the corresponding steady-state frictionless solutions and a ﬁnite-time singularity in the precession rate has been obtained with a critical exponent of 1/2.},
+	language = {en},
+	number = {5},
+	urldate = {2019-01-23},
+	journal = {EPL (Europhysics Letters)},
+	author = {Bhattacharjee, Shayak},
+	month = sep,
+	year = {2014},
+	pages = {54007},
+	file = {Bhattacharjee - 2014 - Spinning disks under gravity.pdf:files/68/Bhattacharjee - 2014 - Spinning disks under gravity.pdf:application/pdf}
+}
+
+
+
+@techreport{hanavan_mathematical_1965,
+	title = {A mathematical model of the human body.: (400822004-001)},
+	shorttitle = {A mathematical model of the human body.},
+	url = {http://doi.apa.org/get-pe-doi.cfm?doi=10.1037/e400822004-001},
+	language = {en},
+	urldate = {2019-01-23},
+	institution = {American Psychological Association},
+	author = {Hanavan, Ernest P.},
+	year = {1965},
+	doi = {10.1037/e400822004-001},
+	note = {type: dataset},
+	file = {Hanavan - 1965 - A mathematical model of the human body. (40082200.pdf:files/74/Hanavan - 1965 - A mathematical model of the human body. (40082200.pdf:application/pdf}
+}
+
+@article{cendra_lagrange-dalembert-poincare_2007,
+	title = {The {Lagrange}-{D}’{Alembert}-{Poincaré} equations and integrability for the {Euler}’s disk},
+	volume = {12},
+	issn = {1560-3547, 1468-4845},
+	url = {http://link.springer.com/10.1134/S1560354707010054},
+	doi = {10.1134/S1560354707010054},
+	abstract = {Nonholonomic systems are described by the Lagrange–D’Alembert’s principle. The presence of symmetry leads, upon the choice of an arbitrary principal connection, to a reduced D’Alembert’s principle and to the Lagrange–D’Alembert–Poincare´ reduced equations. The case of rolling constraints has a long history and it has been the purpose of many works in recent times. In this paper we ﬁnd reduced equations for the case of a thick disk rolling on a rough surface, sometimes called Euler’s disk, using a 3-dimensional abelian group of symmetry. We also show how the reduced system can be transformed into a single second order equation, which is an hypergeometric equation.},
+	language = {en},
+	number = {1},
+	urldate = {2019-01-24},
+	journal = {Regular and Chaotic Dynamics},
+	author = {Cendra, H. and Díaz, V. A.},
+	month = jan,
+	year = {2007},
+	pages = {56--67},
+	file = {Cendra et Díaz - 2007 - The Lagrange-D’Alembert-Poincaré equations and int.pdf:files/76/Cendra et Díaz - 2007 - The Lagrange-D’Alembert-Poincaré equations and int.pdf:application/pdf}
+}
+
+@article{leine_experimental_2009,
+	title = {Experimental and theoretical investigation of the energy dissipation of a rolling disk during its final stage of motion},
+	volume = {79},
+	issn = {0939-1533, 1432-0681},
+	url = {http://link.springer.com/10.1007/s00419-008-0278-6},
+	doi = {10.1007/s00419-008-0278-6},
+	abstract = {This paper is concerned with the dominant dissipation mechanism for a rolling disk in the ﬁnal stage of its motion. The aim of this paper is to present the various dissipation mechanisms for a rolling disk which are used in the literature in a uniﬁed framework. Furthermore, new experiments on the ‘Euler disk’ using a high-speed video camera and a novel image analysis technique are presented. The combined experimental/theoretical approach of this paper sheds some more light on the dominant dissipation mechanism on the time-scale of several seconds.},
+	language = {en},
+	number = {11},
+	urldate = {2019-01-27},
+	journal = {Archive of Applied Mechanics},
+	author = {Leine, R. I.},
+	month = nov,
+	year = {2009},
+	pages = {1063--1082},
+	file = {Leine - 2009 - Experimental and theoretical investigation of the .pdf:files/78/Leine - 2009 - Experimental and theoretical investigation of the .pdf:application/pdf}
+}
+
+@article{farkas_frictional_2003,
+	title = {Frictional coupling between sliding and spinning motion},
+	volume = {90},
+	issn = {0031-9007, 1079-7114},
+	url = {http://arxiv.org/abs/physics/0210024},
+	doi = {10.1103/PhysRevLett.90.248302},
+	abstract = {We show that the friction force and torque, acting at a dry contact of two objects moving and rotating relative to each other, are inherently coupled. As a simple test system, a sliding and spinning disk on a horizontal flat surface is considered. We calculate, and also measure, how the disk is slowing down, and find that it always stops its sliding and spinning motion at the same moment. We discuss the impact of this coupling between friction force and torque on the physics of granular materials.},
+	language = {en},
+	number = {24},
+	urldate = {2019-01-27},
+	journal = {Physical Review Letters},
+	author = {Farkas, Zeno and Bartels, Guido and Unger, Tamas and Wolf, Dietrich E.},
+	month = jun,
+	year = {2003},
+	note = {arXiv: physics/0210024},
+	keywords = {Condensed Matter, Physics - Classical Physics},
+	annote = {Comment: 4 pages, 5 figures; submitted},
+	file = {Farkas et al. - 2003 - Frictional coupling between sliding and spinning m.pdf:files/83/Farkas et al. - 2003 - Frictional coupling between sliding and spinning m.pdf:application/pdf}
+}
+
+@article{le_saux_dynamics_2005,
+	title = {Dynamics of a {Rolling} {Disk} in the {Presence} of {Dry} {Friction}},
+	volume = {15},
+	issn = {0938-8974, 1432-1467},
+	url = {http://link.springer.com/10.1007/s00332-004-0655-4},
+	doi = {10.1007/s00332-004-0655-4},
+	abstract = {In this paper we are interested in the dynamics and numerical treatment of a rolling disk on a ﬂat support. The objective of the paper is to develop a numerical model which is able to simulate the dynamics of a rolling disk taking into account various kinds a friction models (resistance against sliding, pivoting and rolling). A mechanical model of a rolling disk is presented in the framework of Non-smooth Dynamics and Convex Analysis. In an analytical study, approximations are derived for the energy decay of the system during the ﬁnal stage of the motion for various kinds of frictional dissipation models. Finally, the numerical and analytical results are discussed and compared with experimental results available in literature.},
+	language = {en},
+	number = {1},
+	urldate = {2019-01-28},
+	journal = {Journal of Nonlinear Science},
+	author = {Le Saux, C. and Leine, R. I. and Glocker, C.},
+	month = feb,
+	year = {2005},
+	pages = {27--61},
+	file = {Le Saux et al. - 2005 - Dynamics of a Rolling Disk in the Presence of Dry .pdf:files/88/Le Saux et al. - 2005 - Dynamics of a Rolling Disk in the Presence of Dry .pdf:application/pdf}
+}
+
+@article{murugesan_analysis_1999,
+	title = {Analysis of second order multivariate linear system using single term walsh series technique and runge kutta method},
+	volume = {72},
+	issn = {0020-7160, 1029-0265},
+	url = {http://www.tandfonline.com/doi/abs/10.1080/00207169908804859},
+	doi = {10.1080/00207169908804859},
+	language = {en},
+	number = {3},
+	urldate = {2019-02-27},
+	journal = {International Journal of Computer Mathematics},
+	author = {Murugesan, K. and Paul Dhayabaran, D. and Evans, David J.},
+	month = jan,
+	year = {1999},
+	pages = {367--374},
+	file = {Murugesan et al. - 1999 - Analysis of second order multivariate linear syste.pdf:files/93/Murugesan et al. - 1999 - Analysis of second order multivariate linear syste.pdf:application/pdf}
+}
+
+@article{alem_lagrangedalembertpoincare_2006,
+	title = {{THE} {LAGRANGE}–{D}’{ALEMBERT}–{POINCARE}´ {EQUATIONS} {AND} {INTEGRABILITY} {FOR} {THE} {ROLLING} {DISK}},
+	volume = {11},
+	language = {en},
+	journal = {Regular and Chaotic Dynamics},
+	author = {Alem, Av and Blanca, Bahıa},
+	year = {2006},
+	pages = {15},
+	file = {Alem and Blanca - 2006 - THE LAGRANGE–D’ALEMBERT–POINCARE´ EQUATIONS AND IN.pdf:files/103/Alem and Blanca - 2006 - THE LAGRANGE–D’ALEMBERT–POINCARE´ EQUATIONS AND IN.pdf:application/pdf}
+}
+
+
+@article{cendra_lagrange-dalembert-poincare_2007-1,
+	title = {The {Lagrange}-{D}’{Alembert}-{Poincaré} equations and integrability for the {Euler}’s disk},
+	volume = {12},
+	issn = {1560-3547, 1468-4845},
+	url = {http://link.springer.com/10.1134/S1560354707010054},
+	doi = {10.1134/S1560354707010054},
+	abstract = {Nonholonomic systems are described by the Lagrange–D’Alembert’s principle. The presence of symmetry leads, upon the choice of an arbitrary principal connection, to a reduced D’Alembert’s principle and to the Lagrange–D’Alembert–Poincare´ reduced equations. The case of rolling constraints has a long history and it has been the purpose of many works in recent times. In this paper we ﬁnd reduced equations for the case of a thick disk rolling on a rough surface, sometimes called Euler’s disk, using a 3-dimensional abelian group of symmetry. We also show how the reduced system can be transformed into a single second order equation, which is an hypergeometric equation.},
+	language = {en},
+	number = {1},
+	urldate = {2019-03-01},
+	journal = {Regular and Chaotic Dynamics},
+	author = {Cendra, H. and Díaz, V. A.},
+	month = jan,
+	year = {2007},
+	pages = {56--67},
+	file = {Cendra and Díaz - 2007 - The Lagrange-D’Alembert-Poincaré equations and int.pdf:files/102/Cendra and Díaz - 2007 - The Lagrange-D’Alembert-Poincaré equations and int.pdf:application/pdf}
+}
+
+@article{stanislavsky_nonlinear_2001,
+	title = {Nonlinear oscillations in the rolling motion of {Euler}’s disk},
+	volume = {156},
+	issn = {01672789},
+	url = {http://linkinghub.elsevier.com/retrieve/pii/S0167278901002810},
+	doi = {10.1016/S0167-2789(01)00281-0},
+	abstract = {The ﬁxed points of the dynamical system describing the rolling motion of a uniform disk or a uniform circular hoop on a rough horizontal plane without dissipation are analyzed. All ﬁxed points of the system are stated to be steady motion states which are either saddle points or centers. The spectral analysis of the sound amplitude time series emitted by a toy of the rolling disk shows that the similar nonlinear oscillations are expected in the motion with dissipation. If under adiabatic approximation a ﬁnite-time singularity occurs, the bifurcation in the disk motion can appear. © 2001 Elsevier Science B.V. All rights reserved.},
+	language = {en},
+	number = {3-4},
+	urldate = {2019-03-02},
+	journal = {Physica D: Nonlinear Phenomena},
+	author = {Stanislavsky, A.A. and Weron, K.},
+	month = aug,
+	year = {2001},
+	pages = {247--259},
+	file = {Stanislavsky et Weron - 2001 - Nonlinear oscillations in the rolling motion of Eu.pdf:files/106/Stanislavsky et Weron - 2001 - Nonlinear oscillations in the rolling motion of Eu.pdf:application/pdf}
+}
+
+@article{batista_steady_2006,
+	title = {Steady motion of a rigid disk of finite thickness on a horizontal plane},
+	volume = {41},
+	issn = {0020-7462},
+	url = {http://www.sciencedirect.com/science/article/pii/S0020746206000217},
+	doi = {10.1016/j.ijnonlinmec.2006.02.005},
+	abstract = {The article discusses the steady motion of a rigid disk of finite thickness rolling on its edge on a horizontal plane under the influence of gravity. The governing equations are presented and two cases allowing for a steady-state solution are considered: rolling on consistently rough ground and rolling on perfectly smooth ground. The conditions of steady motion are derived for both kinds of ground and it is shown that the possible steady motion of a disk is either on a straight line or in a circle. Oscillations about steady state are discussed and conditions for stable motion established. The bifurcations of steady motions on a smooth surface are also considered.},
+	number = {4},
+	urldate = {2019-03-16},
+	journal = {International Journal of Non-Linear Mechanics},
+	author = {Batista, Milan},
+	month = may,
+	year = {2006},
+	keywords = {Dynamics, Stability, Steady motion},
+	pages = {605--621},
+	file = {ScienceDirect Full Text PDF:files/110/Batista - 2006 - Steady motion of a rigid disk of finite thickness .pdf:application/pdf;ScienceDirect Snapshot:files/111/S0020746206000217.html:text/html}
+}
+
+@article{love_treatise_nodate,
+	title = {A treatise on the mathematical theory of elasticity},
+	language = {en},
+	author = {Love, Augustus},
+	pages = {369},
+	file = {Love - A treatise on the mathematical theory of elasticit.pdf:files/112/Love - A treatise on the mathematical theory of elasticit.pdf:application/pdf}
+}
+
+@misc{fedec_roue_2011,
+	title = {Roue {Cyr}, {Manuel} pédagogique},
+	author = {FEDEC},
+	year = {2011},
+	file = {FEDEC_manuel02_roueCyr_FR.pdf:files/12/FEDEC_manuel02_roueCyr_FR.pdf:application/pdf}
+}
+
+@inproceedings{jin_experimental_2014,
+	address = {Durnten-Zurich},
+	series = {Applied mechanics and materials},
+	title = {Experimental and applied mechanics: selected, peer reviewed papers from the 2014 {International} {Conference} on {Experimental} and {Applied} {Mechanics} ({EAM} 2014), {January} 20-21, 2014, {Miami}, {USA}},
+	isbn = {978-3-03835-028-6},
+	shorttitle = {Experimental and applied mechanics},
+	language = {en},
+	publisher = {ttp, Trans Tech Publ},
+	editor = {Jin, Tan},
+	year = {2014},
+	note = {OCLC: 931633500},
+	file = {Jin - 2014 - Experimental and applied mechanics selected, peer.pdf:files/116/Jin - 2014 - Experimental and applied mechanics selected, peer.pdf:application/pdf}
+}
+
+@misc{calvier_structures_nodate,
+	type = {Fabrication de structures},
+	title = {Structures d'acrobatie aérienne},
+	url = {http://nil-obstrat.fr/?page_id=2632},
+	urldate = {2019-03-24},
+	journal = {Nil Obstrat},
+	author = {Calvier, Serge}
+}
+
+@techreport{myers_handbook_1962,
+	address = {Fort Belvoir, VA},
+	title = {{HANDBOOK} {OF} {EQUATIONS} {FOR} {MASS} {AND} {AREA} {PROPERTIES} {OF} {VARIOUS} {GEOMETRICAL} {SHAPES}:},
+	shorttitle = {{HANDBOOK} {OF} {EQUATIONS} {FOR} {MASS} {AND} {AREA} {PROPERTIES} {OF} {VARIOUS} {GEOMETRICAL} {SHAPES}},
+	url = {http://www.dtic.mil/docs/citations/AD0274936},
+	abstract = {This publication is a compilation of equations for moments of inertia, centroidal dis­ tances, radii of gyration, and other mathematical properties related to solids, thin shells, thin rods, plane areas, and ogival shapes.},
+	language = {en},
+	urldate = {2019-04-04},
+	institution = {Defense Technical Information Center},
+	author = {Myers, Jack A.},
+	month = apr,
+	year = {1962},
+	doi = {10.21236/AD0274936},
+	file = {Myers - 1962 - HANDBOOK OF EQUATIONS FOR MASS AND AREA PROPERTIES.pdf:files/120/Myers - 1962 - HANDBOOK OF EQUATIONS FOR MASS AND AREA PROPERTIES.pdf:application/pdf}
+}
+
+@article{jalali_terminal_2015,
+	title = {Terminal retrograde turn of rolling rings},
+	volume = {92},
+	issn = {1539-3755, 1550-2376},
+	url = {https://link.aps.org/doi/10.1103/PhysRevE.92.032913},
+	doi = {10.1103/PhysRevE.92.032913},
+	language = {en},
+	number = {3},
+	urldate = {2019-04-05},
+	journal = {Physical Review E},
+	author = {Jalali, Mir Abbas and Sarebangholi, Milad S. and Alam, Mohammad-Reza},
+	month = sep,
+	year = {2015},
+	file = {Jalali et al. - 2015 - Terminal retrograde turn of rolling rings.pdf:files/123/Jalali et al. - 2015 - Terminal retrograde turn of rolling rings.pdf:application/pdf}
+}
+
+@article{whitehead_spinning_1983,
+	title = {Spinning objects on horizontal planes},
+	volume = {51},
+	issn = {0002-9505, 1943-2909},
+	url = {http://aapt.scitation.org/doi/10.1119/1.13223},
+	doi = {10.1119/1.13223},
+	language = {en},
+	number = {5},
+	urldate = {2019-05-03},
+	journal = {American Journal of Physics},
+	author = {Whitehead, Lorne A. and Curzon, Frank L.},
+	month = may,
+	year = {1983},
+	pages = {449--452},
+	file = {Whitehead et Curzon - 1983 - Spinning objects on horizontal planes.pdf:files/126/Whitehead et Curzon - 1983 - Spinning objects on horizontal planes.pdf:application/pdf}
+}
+
+@book{blevins_formulas_2016,
+	address = {Chichester, West Sussex},
+	title = {Formulas for dynamics, acoustics and vibration},
+	isbn = {978-1-119-03811-5},
+	language = {en},
+	publisher = {Wiley},
+	author = {Blevins, Robert D.},
+	year = {2016},
+	keywords = {Dynamics, Engineering mathematics, Formulae, Mathematical models, Mathematics, Vibration},
+	file = {Blevins - 2016 - Formulas for dynamics, acoustics and vibration.pdf:files/129/Blevins - 2016 - Formulas for dynamics, acoustics and vibration.pdf:application/pdf}
+}
+
+@book{kaloop_advanced_2016,
+	edition = {0},
+	title = {Advanced {Materials}, {Structures} and {Mechanical} {Engineering}: {Proceedings} of the {International} {Conference} on {Advanced} {Materials}, {Structures} and {Mechanical} {Engineering}, {Incheon}, {South} {Korea}, {May} 29-31, 2015},
+	isbn = {978-0-429-22608-3},
+	shorttitle = {Advanced {Materials}, {Structures} and {Mechanical} {Engineering}},
+	url = {https://www.taylorfrancis.com/books/9781315683003},
+	language = {en},
+	urldate = {2019-05-15},
+	publisher = {CRC Press},
+	editor = {Kaloop, Mosbeh},
+	month = apr,
+	year = {2016},
+	doi = {10.1201/b19693},
+	file = {Kaloop - 2016 - Advanced Materials, Structures and Mechanical Engi.pdf:files/138/Kaloop - 2016 - Advanced Materials, Structures and Mechanical Engi.pdf:application/pdf}
+}
+
+@book{kaloop_advanced_2016-1,
+	edition = {0},
+	title = {Advanced {Materials}, {Structures} and {Mechanical} {Engineering}: {Proceedings} of the {International} {Conference} on {Advanced} {Materials}, {Structures} and {Mechanical} {Engineering}, {Incheon}, {South} {Korea}, {May} 29-31, 2015},
+	isbn = {978-0-429-22608-3},
+	shorttitle = {Advanced {Materials}, {Structures} and {Mechanical} {Engineering}},
+	url = {https://www.taylorfrancis.com/books/9781315683003},
+	language = {en},
+	urldate = {2019-05-15},
+	publisher = {CRC Press},
+	editor = {Kaloop, Mosbeh},
+	month = apr,
+	year = {2016},
+	doi = {10.1201/b19693},
+	file = {Kaloop - 2016 - Advanced Materials, Structures and Mechanical Engi.pdf:files/134/Kaloop - 2016 - Advanced Materials, Structures and Mechanical Engi.pdf:application/pdf}
+}
+
+@book{kaloop_advanced_2016-2,
+	edition = {0},
+	title = {Advanced {Materials}, {Structures} and {Mechanical} {Engineering}: {Proceedings} of the {International} {Conference} on {Advanced} {Materials}, {Structures} and {Mechanical} {Engineering}, {Incheon}, {South} {Korea}, {May} 29-31, 2015},
+	isbn = {978-0-429-22608-3},
+	shorttitle = {Advanced {Materials}, {Structures} and {Mechanical} {Engineering}},
+	url = {https://www.taylorfrancis.com/books/9781315683003},
+	language = {en},
+	urldate = {2019-05-15},
+	publisher = {CRC Press},
+	editor = {Kaloop, Mosbeh},
+	month = apr,
+	year = {2016},
+	doi = {10.1201/b19693},
+	file = {Kaloop - 2016 - Advanced Materials, Structures and Mechanical Engi.pdf:files/135/Kaloop - 2016 - Advanced Materials, Structures and Mechanical Engi.pdf:application/pdf}
+}
+
+@book{jia_engineering_2018,
+	address = {Boca Raton, FL : Taylor \& Francis Group, [2018] {\textbar} “A Science Publishers Book.”},
+	edition = {1},
+	title = {Engineering {Dynamics} and {Vibrations}: {Recent} {Developments}},
+	isbn = {978-1-315-11990-8},
+	shorttitle = {Engineering {Dynamics} and {Vibrations}},
+	url = {https://www.taylorfrancis.com/books/9781498719278},
+	language = {en},
+	urldate = {2019-05-15},
+	publisher = {CRC Press},
+	author = {Jia, Junbo and Kee Paik, Jeom},
+	editor = {Jia, Junbo and Paik, Jeom Kee},
+	month = dec,
+	year = {2018},
+	doi = {10.1201/9781315119908},
+	file = {Jia et Kee Paik - 2018 - Engineering Dynamics and Vibrations Recent Develo.pdf:files/136/Jia et Kee Paik - 2018 - Engineering Dynamics and Vibrations Recent Develo.pdf:application/pdf}
+}
+
+@article{busby_structural_nodate,
+	title = {Structural {Dynamics}: {Concepts} and {Applications}},
+	language = {en},
+	journal = {Structural Dynamics},
+	author = {Busby, Henry R and Staab, George H},
+	pages = {599},
+	file = {Busby et Staab - Structural Dynamics Concepts and Applications.pdf:files/137/Busby et Staab - Structural Dynamics Concepts and Applications.pdf:application/pdf}
+}
+
+@book{osinski_damping_1998,
+	address = {Rotterdam},
+	title = {Damping of vibrations},
+	isbn = {978-90-5410-676-0 978-90-5410-677-7},
+	language = {en},
+	publisher = {Balkema},
+	editor = {Osiński, Zbigniew},
+	year = {1998},
+	note = {OCLC: 245719112},
+	file = {Osiński - 1998 - Damping of vibrations.pdf:files/139/Osiński - 1998 - Damping of vibrations.pdf:application/pdf}
+}
+
+@book{richards_design_2013,
+	edition = {0},
+	title = {Design {Engineer}'s {Case} {Studies} and {Examples}},
+	isbn = {978-0-429-16815-4},
+	url = {https://www.taylorfrancis.com/books/9781466592827},
+	language = {en},
+	urldate = {2019-07-24},
+	publisher = {CRC Press},
+	author = {Richards, Keith L.},
+	month = nov,
+	year = {2013},
+	doi = {10.1201/b15590},
+	file = {Richards - 2013 - Design Engineer's Case Studies and Examples.pdf:files/147/Richards - 2013 - Design Engineer's Case Studies and Examples.pdf:application/pdf}
+}
+
+@book{farkas_optimum_2013,
+	address = {New York},
+	title = {Optimum design of steel structures},
+	isbn = {978-3-642-36867-7},
+	language = {en},
+	publisher = {Springer},
+	author = {Farkas, Jozsef},
+	year = {2013},
+	file = {Farkas - 2013 - Optimum design of steel structures.pdf:files/148/Farkas - 2013 - Optimum design of steel structures.pdf:application/pdf}
+}
+
+@book{krenk_statics_2013,
+	address = {New York},
+	edition = {1st ed},
+	title = {Statics and mechanics of structures},
+	isbn = {978-94-007-6112-4},
+	language = {en},
+	publisher = {Springer},
+	author = {Krenk, Steen},
+	year = {2013},
+	file = {Krenk - 2013 - Statics and mechanics of structures.pdf:files/149/Krenk - 2013 - Statics and mechanics of structures.pdf:application/pdf}
+}
+
+@article{marinsek,
+	title = {{BASIC} {LANDING} {CHARACTERISTICS} {AND} {THEIR} {APPLICATION} {IN} {ARTISTIC} {GYMNASTICS}},
+	volume = {2},
+	abstract = {Landings are extremely important in gymnastics to improve athlete performances as well as to reduce injuries. Studies on landings therefore provide an interesting field of research in which numerous studies have been conducted. This article gives an overview of the results from these studies that can be used by coaches to improve teaching on landing techniques. The biomechanical characteristics and motor control of landings is reviewed.},
+	language = {en},
+	number = {2},
+	author = {Marinšek, Miha},
+	pages = {9},
+	file = {Marinšek - BASIC LANDING CHARACTERISTICS AND THEIR APPLICATIO.pdf:files/154/Marinšek - BASIC LANDING CHARACTERISTICS AND THEIR APPLICATIO.pdf:application/pdf}
+}
+
+@article{mcnair_normative_1999,
+	title = {Normative data of vertical ground reaction forces during landing from a jump},
+	volume = {2},
+	issn = {14402440},
+	url = {https://linkinghub.elsevier.com/retrieve/pii/S144024409980187X},
+	doi = {10.1016/S1440-2440(99)80187-X},
+	language = {en},
+	number = {1},
+	urldate = {2020-01-25},
+	journal = {Journal of Science and Medicine in Sport},
+	author = {McNair, Peter J and Prapavessis, Harry},
+	month = mar,
+	year = {1999},
+	pages = {86--88},
+	file = {McNair et Prapavessis - 1999 - Normative data of vertical ground reaction forces .pdf:/Users/charlotte/Zotero/storage/TUURKGRA/McNair et Prapavessis - 1999 - Normative data of vertical ground reaction forces .pdf:application/pdf}
+}
+
+@article{prapavessis_effects_1999,
+	title = {Effects of {Instruction} in {Jumping} {Technique} and {Experience} {Jumping} on {Ground} {Reaction} {Forces}},
+	volume = {29},
+	issn = {0190-6011, 1938-1344},
+	url = {http://www.jospt.org/doi/10.2519/jospt.1999.29.6.352},
+	doi = {10.2519/jospt.1999.29.6.352},
+	language = {en},
+	number = {6},
+	urldate = {2020-01-25},
+	journal = {Journal of Orthopaedic \& Sports Physical Therapy},
+	author = {Prapavessis, Harry and McNair, Peter J.},
+	month = jun,
+	year = {1999},
+	pages = {352--356},
+	file = {Prapavessis et McNair - 1999 - Effects of Instruction in Jumping Technique and Ex.pdf:/Users/charlotte/Zotero/storage/7MFX29ET/Prapavessis et McNair - 1999 - Effects of Instruction in Jumping Technique and Ex.pdf:application/pdf}
+}
+
+@article{seegmiller_ground_nodate,
+	title = {Ground {Reaction} {Forces} {Among} {Gymnasts} and {Recreational} {Athletes} in {Drop} {Landings}},
+	},
+	language = {en},
+	author = {Seegmiller, Jeff G and McCaw, Steven T},
+	pages = {4},
+	file = {Seegmiller et McCaw - Ground Reaction Forces Among Gymnasts and Recreati.pdf:/Users/charlotte/Zotero/storage/8Z8MAZFR/Seegmiller et McCaw - Ground Reaction Forces Among Gymnasts and Recreati.pdf:application/pdf}
+}
